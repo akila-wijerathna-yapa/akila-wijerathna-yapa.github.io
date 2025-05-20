@@ -1,0 +1,73 @@
+---
+title: "Protein Extraction Protocols"
+---
+
+Protein extraction is a fundamental technique in molecular and cellular biology used to isolate and solubilize proteins from various biological materials, including cells, tissues, and biofluids. High-quality protein preparations are essential for downstream applications such as SDS-PAGE, western blotting, ELISA, mass spectrometry, and enzyme activity assays.
+
+---
+
+### Logic of Protein Extraction
+
+The primary goal of protein extraction is to efficiently disrupt cellular compartments and solubilize proteins while preserving their native structure and function (or denaturing them depending on the application). This requires a delicate balance of mechanical, chemical, and thermal treatments.
+
+---
+
+### Chemicals Used and Their Functions
+
+| Chemical/Reagent           | Function                                                                 |
+|---------------------------|--------------------------------------------------------------------------|
+| **Detergents (e.g., SDS, Triton X-100, NP-40)** | Solubilize membranes and denature or preserve protein structure         |
+| **Buffer (Tris-HCl, PBS, HEPES)**              | Maintain pH and stabilize proteins                                       |
+| **Protease inhibitors (PMSF, leupeptin, aprotinin)** | Prevent proteolytic degradation by endogenous proteases         |
+| **Reducing agents (DTT, β-mercaptoethanol)**   | Reduce disulfide bonds; preserve protein monomers                       |
+| **Salts (NaCl, KCl)**                          | Stabilize proteins and maintain ionic strength                          |
+| **Chelators (EDTA, EGTA)**                     | Inhibit metalloproteases by chelating divalent cations                  |
+| **Urea, Thiourea (for denaturing protocols)**  | Disrupt hydrogen bonds and denature tertiary structure                  |
+| **Glycerol**                                   | Stabilizes proteins during storage and freeze-thaw cycles              |
+
+---
+
+### Steps in Protein Extraction
+
+1. **Sample Preparation**  
+   Harvest and wash cells/tissue with cold PBS to remove blood or culture media. Snap-freeze if necessary.
+
+2. **Cell/Tissue Lysis**  
+   Disrupt cells using mechanical (homogenization, sonication) or chemical lysis in appropriate buffer with detergents and inhibitors.
+
+3. **Solubilization**  
+   Incubate on ice to allow complete protein solubilization. Use gentle agitation for non-denaturing protocols.
+
+4. **Clarification**  
+   Centrifuge lysate at high speed (10,000–20,000 x g) for 10–30 minutes to pellet debris. Collect supernatant.
+
+5. **Protein Quantification**  
+   Use assays such as Bradford, BCA, or Lowry to determine protein concentration.
+
+6. **Storage**  
+   Aliquot proteins and store at –80°C with glycerol if long-term preservation is required.
+
+---
+
+### Optimization Strategies
+
+- **Buffer Composition:** Adjust pH, salt, and detergent according to target protein (cytosolic vs. membrane-bound).
+- **Temperature Control:** Always perform extraction on ice or at 4°C to prevent proteolysis.
+- **Use of Protease and Phosphatase Inhibitors:** Essential for preserving post-translational modifications.
+- **Mechanical vs. Chemical Lysis:** Combine both for tough tissues or high yields.
+- **Avoid Over-Sonication:** Can shear proteins and affect functional studies.
+
+---
+
+### Protein Quality Assessment
+
+- **SDS-PAGE:** Assess integrity and molecular weight distribution.
+- **Western Blotting:** Verify expression and specificity of target proteins.
+- **UV-Vis Spectroscopy (A280):** Estimate concentration and assess purity.
+- **Mass Spectrometry:** Identify post-translational modifications and sequence-level information.
+
+---
+
+### Conclusion
+
+Protein extraction is a nuanced process that must be tailored to the sample type and downstream application. A well-optimized protocol ensures maximal yield, structural integrity, and functional preservation of proteins, forming the cornerstone of reliable proteomic analyses.

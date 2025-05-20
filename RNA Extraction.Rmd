@@ -1,0 +1,73 @@
+---
+title: "RNA Extraction Protocols"
+---
+
+RNA extraction is a critical procedure in molecular biology that enables the isolation of intact and high-purity RNA from various biological samples. It serves as the foundation for downstream applications such as reverse transcription, quantitative PCR (qPCR), RNA-sequencing, and transcriptomic analyses. The integrity and yield of RNA are highly dependent on the extraction strategy, choice of reagents, and optimization of procedural steps.
+
+---
+
+### Logic of RNA Extraction
+
+RNA extraction involves cell lysis, inactivation of ribonucleases (RNases), separation of RNA from DNA and proteins, and finally RNA precipitation and purification. The fundamental goal is to release RNA from the cell while preserving its structural integrity and avoiding degradation.
+
+---
+
+### Chemicals Used and Their Functions
+
+| Chemical/Reagent             | Function                                                                 |
+|-----------------------------|--------------------------------------------------------------------------|
+| **Guanidinium thiocyanate** | Strong chaotropic agent; denatures proteins and inactivates RNases       |
+| **Phenol:Chloroform**       | Separates RNA from DNA and proteins via phase separation                 |
+| **Isopropanol**             | Precipitates RNA by reducing solubility                                  |
+| **Ethanol (70%)**           | Washes RNA pellet to remove salts and impurities                         |
+| **β-mercaptoethanol/DTT**   | Reduces disulfide bonds; enhances RNase inactivation                     |
+| **Sodium acetate/NaCl**     | Provides cations to facilitate RNA precipitation                         |
+| **Tris-HCl (pH 7–8)**       | Buffers and stabilizes RNA during resuspension                          |
+| **EDTA**                    | Chelates divalent ions (Mg²⁺, Ca²⁺); inhibits RNase activity             |
+| **DEPC-treated water**      | RNase-free water used to resuspend RNA                                   |
+
+---
+
+### Steps in RNA Extraction
+
+1. **Tissue Disruption and Cell Lysis**  
+   Homogenize tissue in a lysis buffer containing guanidinium thiocyanate and β-mercaptoethanol. This ensures RNase inactivation and solubilization of cellular components.
+
+2. **Phase Separation (if using TRIzol or Acid-Phenol Method)**  
+   Add acidified phenol and chloroform, then centrifuge. This yields:
+   - Upper aqueous phase: RNA
+   - Interphase: DNA
+   - Organic phase: Proteins
+
+3. **RNA Precipitation**  
+   Transfer aqueous phase to a new tube and add isopropanol (or ethanol with salt). Incubate and centrifuge to pellet RNA.
+
+4. **RNA Washing**  
+   Wash the RNA pellet with 70% ethanol to remove residual salts and organic contaminants.
+
+5. **RNA Resuspension**  
+   Air-dry the pellet and resuspend in RNase-free water or TE buffer.
+
+---
+
+### Optimization Strategies
+
+- **Sample Homogenization:** Use appropriate homogenizers (bead mill, mortar and pestle, rotor-stator) based on tissue type.
+- **RNase Control:** Always use RNase-free reagents, tubes, and tips; treat surfaces with RNase decontamination agents.
+- **Yield vs. Purity Balance:** High yield may sometimes compromise purity. UV absorbance ratios (A260/280 and A260/230) can guide optimization.
+- **Temperature Management:** Perform steps on ice where possible to preserve RNA integrity.
+- **Column-Based Kits vs. Organic Methods:** Choose based on throughput, sensitivity, and desired purity. Column-based kits simplify workflow but may lower yield.
+
+---
+
+### RNA Quality Assessment
+
+- **Spectrophotometry:** A260/A280 ratio ~2.0 indicates high purity RNA; A260/A230 >1.8 preferred.
+- **Electrophoresis:** Clear 28S and 18S rRNA bands (with ~2:1 intensity) indicate intact RNA.
+- **Bioanalyzer/RNA Integrity Number (RIN):** Gold standard for assessing RNA degradation.
+
+---
+
+### Conclusion
+
+Effective RNA extraction is both a science and an art—it requires an understanding of molecular stability, reagent interactions, and sample-specific characteristics. Mastery of RNA extraction underpins high-fidelity transcriptomic analyses and ensures the accuracy of downstream biological interpretations.

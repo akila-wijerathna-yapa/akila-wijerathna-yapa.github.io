@@ -11,7 +11,7 @@
 
 
 
-<title>DNA Extraction Protocols</title>
+<title>Spatial Omics</title>
 
 <script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -327,167 +327,234 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">DNA Extraction Protocols</h1>
+<h1 class="title toc-ignore">Spatial Omics</h1>
 
 </div>
 
 
-<p>DNA extraction is a fundamental procedure in molecular biology,
-underpinning a vast array of downstream applications including PCR,
-sequencing, cloning, and genotyping. An effective DNA extraction
-protocol must efficiently lyse cells, protect nucleic acids from
-degradation, and purify DNA away from proteins, polysaccharides, and
-other contaminants.</p>
-<p>This page outlines the logic behind DNA extraction, common reagents
-and their biochemical functions, and principles for optimizing protocols
-across various sample types.</p>
-<hr />
-<div id="logic-behind-dna-extraction" class="section level3">
-<h3>1. Logic Behind DNA Extraction</h3>
-<p>A successful DNA extraction protocol typically involves the following
-sequential steps:</p>
-<ol style="list-style-type: decimal">
-<li><strong>Cell lysis</strong>: Disrupts cell membranes and releases
-intracellular components.</li>
-<li><strong>DNA stabilization</strong>: Inhibits nucleases that degrade
-DNA.</li>
-<li><strong>Protein and contaminant removal</strong>: Precipitates or
-separates proteins, lipids, and polysaccharides.</li>
-<li><strong>DNA precipitation or binding</strong>: Concentrates and
-isolates DNA.</li>
-<li><strong>DNA wash and elution</strong>: Removes residual contaminants
-and recovers purified DNA.</li>
-</ol>
-<p>These steps can be adapted to suit the biological material (plant,
-animal, microbial, or environmental) and intended downstream
-application.</p>
-<hr />
+<p>Spatial omics is a transformative suite of high-throughput
+technologies that enables the mapping of molecular features—such as
+transcripts, proteins, metabolites, and epigenomic marks—within their
+precise spatial context in tissue sections. Unlike bulk and single-cell
+omics approaches that dissociate cells from their microenvironment,
+spatial omics preserves tissue architecture, providing insights into
+cell–cell communication, tissue heterogeneity, developmental gradients,
+and the structural underpinnings of disease.</p>
+<div id="biological-significance" class="section level3">
+<h3>Biological Significance</h3>
+<p>Spatial omics offers contextualized data that aligns with key
+biological questions. For example, understanding immune infiltration in
+tumors, neural architecture in the brain, or zonation in liver and plant
+tissues requires spatially resolved data. Importantly, spatial methods
+complement, but do not replace, traditional omics—each has advantages
+depending on the research question.</p>
 </div>
-<div id="chemicals-used-and-their-functions" class="section level3">
-<h3>2. Chemicals Used and Their Functions</h3>
+<div id="spatial-technology-modalities" class="section level3">
+<h3>Spatial Technology Modalities</h3>
+<p>Spatial omics platforms fall into two broad categories:
+<strong>imaging-based</strong> and
+<strong>sequencing-based</strong>.</p>
+<div id="imaging-based-platforms" class="section level4">
+<h4>Imaging-Based Platforms</h4>
+<p>These include technologies like Xenium (10x Genomics), CosMx SMI
+(NanoString), MERSCOPE (Vizgen), CODEX (Akoya), and IMC/MIBI
+(Fluidigm/IonPath). They use fluorescent imaging or mass cytometry to
+detect labeled RNA or proteins directly in tissue sections with
+subcellular resolution (30–100 nm).</p>
+<ul>
+<li><strong>Xenium:</strong> Single-molecule RNA detection (~100 nm)
+with fixed panels.</li>
+<li><strong>CosMx SMI:</strong> Simultaneous RNA and protein detection
+(100–200 nm).</li>
+<li><strong>MERSCOPE:</strong> Ultra-high resolution RNA detection via
+MERFISH (~30–50 nm).</li>
+<li><strong>CODEX:</strong> Iterative fluorescence imaging of proteins
+(~40–60+ markers).</li>
+<li><strong>IMC/MIBI:</strong> Metal-tagged antibody imaging for deep
+protein profiling (~1 µm).</li>
+</ul>
+</div>
+<div id="sequencing-based-platforms" class="section level4">
+<h4>Sequencing-Based Platforms</h4>
+<p>Platforms like Visium HD, Stereo-seq, Slide-seq, PIXEL-seq, and
+Seq-Scope capture spatial transcriptomes using spatial barcoded arrays
+and next-generation sequencing.</p>
+<ul>
+<li><strong>Visium HD:</strong> 2 µm resolution, whole transcriptome,
+robust workflows.</li>
+<li><strong>Stereo-seq:</strong> Submicron RNA resolution (0.5–0.7 µm),
+high coverage.</li>
+<li><strong>Slide-seq v2:</strong> 10 µm resolution, bead-based
+capture.</li>
+<li><strong>PIXEL-seq &amp; Seq-Scope:</strong> Experimental platforms
+offering subcellular mapping capabilities.</li>
+</ul>
+</div>
+</div>
+<div id="platform-principles-and-considerations" class="section level3">
+<h3>Platform Principles and Considerations</h3>
+<p>Each platform varies in resolution, detection chemistry, sample
+compatibility, and computational requirements.</p>
+<ul>
+<li><strong>Probe Design:</strong> Affects signal strength and
+specificity.</li>
+<li><strong>Amplification Strategy:</strong> Rolling circle
+amplification (e.g., Xenium) improves sensitivity but may introduce
+bias.</li>
+<li><strong>Spatial Decoding:</strong> Single-molecule (MERFISH)
+vs. spot-based (Visium).</li>
+<li><strong>Tissue Properties:</strong> Affect RNA diffusion, signal
+stability, and segmentation accuracy.</li>
+<li><strong>Segmentation:</strong> Defining cell boundaries remains a
+key challenge across platforms.</li>
+</ul>
+</div>
+<div id="computational-ecosystem" class="section level3">
+<h3>Computational Ecosystem</h3>
+<p>Spatial omics data analysis is resource-intensive, involving:</p>
+<ul>
+<li><strong>Preprocessing</strong> and <strong>cell/spot
+segmentation</strong></li>
+<li><strong>Spatial clustering</strong> and <strong>neighborhood
+analysis</strong></li>
+<li><strong>Ligand–receptor inference</strong> and <strong>trajectory
+modeling</strong></li>
+</ul>
+<p>Tools include:</p>
+<ul>
+<li><strong>Seurat (R):</strong> Beginner-friendly, scRNA-seq
+integration.</li>
+<li><strong>Scanpy (Python):</strong> Flexible, scalable, custom
+workflows.</li>
+<li><strong>Giotto (R):</strong> Spatial-specific tools with
+visualization and segmentation.</li>
+<li><strong>Squidpy (Python):</strong> Advanced spatial statistics,
+neighborhood modeling.</li>
+</ul>
+</div>
+<div id="expanding-beyond-transcriptomics" class="section level3">
+<h3>Expanding Beyond Transcriptomics</h3>
+<div id="spatial-proteomics" class="section level4">
+<h4>Spatial Proteomics</h4>
+<ul>
+<li><strong>CODEX, IBEX:</strong> Iterative antibody-based imaging for
+40–60+ proteins.</li>
+<li><strong>IMC/MIBI:</strong> Mass cytometry-based, no spectral
+overlap.</li>
+</ul>
+</div>
+<div id="spatial-metabolomics-lipidomics" class="section level4">
+<h4>Spatial Metabolomics &amp; Lipidomics</h4>
+<ul>
+<li><strong>MALDI-MSI:</strong> High spatial resolution (5–100 µm) for
+metabolite mapping.</li>
+<li><strong>DESI-MSI:</strong> Ambient ionization, minimal
+preparation.</li>
+<li><strong>SIMS:</strong> Sub-100 nm resolution for lipids/elements,
+high spatial detail.</li>
+</ul>
+</div>
+<div id="spatial-epigenomics" class="section level4">
+<h4>Spatial Epigenomics</h4>
+<ul>
+<li><strong>Spatial ATAC-seq:</strong> Chromatin accessibility in
+space.</li>
+<li><strong>DNA-MERFISH:</strong> Labeling repetitive elements and
+histone modifications.</li>
+<li><strong>CUT&amp;Tag/CUT&amp;RUN adaptations:</strong> Spatial
+profiling of histone marks.</li>
+</ul>
+</div>
+</div>
+<div id="multimodal-integration" class="section level3">
+<h3>Multimodal Integration</h3>
+<p>New workflows combine multiple molecular layers:</p>
+<ul>
+<li><strong>Visium + Immunofluorescence</strong>: Transcriptome +
+protein.</li>
+<li><strong>Spatial-ATAC + RNA-seq</strong>: Epigenome +
+transcriptome.</li>
+<li><strong>CODEX + MIBI</strong>: Serial or registered tissue
+sections.</li>
+<li><strong>Spatial Lipidomics + MSI</strong>: Co-mapping of lipid and
+metabolic gradients.</li>
+</ul>
+</div>
+<div id="applications-in-cancer-biology" class="section level3">
+<h3>Applications in Cancer Biology</h3>
+<div id="tumor-microenvironment" class="section level4">
+<h4>Tumor Microenvironment</h4>
+<ul>
+<li>Spatial profiling reveals immune cell niches, stromal barriers, and
+tertiary lymphoid structures (TLS).</li>
+<li><strong>GeoMX DSP</strong> is used for targeted transcriptomic and
+proteomic analysis of specific regions.</li>
+</ul>
+</div>
+<div id="cancer-neuroscience" class="section level4">
+<h4>Cancer Neuroscience</h4>
+<ul>
+<li>Spatial omics maps tumor–nerve interactions.</li>
+<li><strong>SCOTIA</strong>: A Python package to infer spatial cell–cell
+interaction patterns.</li>
+</ul>
+</div>
+<div id="retrospective-analysis-of-ffpe-samples" class="section level4">
+<h4>Retrospective Analysis of FFPE Samples</h4>
+<ul>
+<li>Spatial omics compatibility with FFPE enables mining decades of
+archival samples.</li>
+<li>Opens doors to rare cancer analysis and translational
+discovery.</li>
+</ul>
+</div>
+</div>
+<div id="technological-needs-and-future-directions"
+class="section level3">
+<h3>Technological Needs and Future Directions</h3>
 <table>
 <colgroup>
-<col width="27%" />
-<col width="72%" />
+<col width="36%" />
+<col width="63%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th>Reagent</th>
-<th>Function</th>
+<th>Innovation Area</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Tris-HCl</strong></td>
-<td>Buffers pH and maintains a stable environment for DNA integrity</td>
+<td>3D Spatial Reconstruction</td>
+<td>Volumetric tissue architecture and nerve tracing</td>
 </tr>
 <tr class="even">
-<td><strong>EDTA</strong></td>
-<td>Chelates divalent cations (e.g., Mg²⁺), inhibiting DNases</td>
+<td>Target-Agnostic Proteomics</td>
+<td>Mass spectrometry-based protein discovery</td>
 </tr>
 <tr class="odd">
-<td><strong>SDS (Sodium dodecyl sulfate)</strong></td>
-<td>Disrupts lipid membranes and denatures proteins</td>
+<td>Temporal Resolution</td>
+<td>Lineage tracking, turnover within space</td>
 </tr>
 <tr class="even">
-<td><strong>CTAB (cetyltrimethylammonium bromide)</strong></td>
-<td>Binds polysaccharides and removes complex carbohydrates (plant
-DNA)</td>
+<td>Retrospective Multiomics</td>
+<td>Joint H&amp;E, spatial, and bulk data integration</td>
 </tr>
 <tr class="odd">
-<td><strong>Proteinase K</strong></td>
-<td>Degrades proteins, including histones and nucleases</td>
-</tr>
-<tr class="even">
-<td><strong>Phenol-chloroform</strong></td>
-<td>Separates proteins from nucleic acids via phase separation</td>
-</tr>
-<tr class="odd">
-<td><strong>Isopropanol or Ethanol</strong></td>
-<td>Precipitates DNA from aqueous solution</td>
-</tr>
-<tr class="even">
-<td><strong>NaCl or KCl</strong></td>
-<td>Enhances protein precipitation and stabilizes DNA structure</td>
-</tr>
-<tr class="odd">
-<td><strong>RNase A</strong></td>
-<td>Degrades RNA to purify DNA preparations</td>
+<td>Expanded Panel Diversity</td>
+<td>Inclusive profiling of neglected tissue systems</td>
 </tr>
 </tbody>
 </table>
-<hr />
-</div>
-<div id="optimizing-a-dna-extraction-protocol" class="section level3">
-<h3>3. Optimizing a DNA Extraction Protocol</h3>
-<p>Optimizing DNA extraction requires balancing purity, yield, and
-integrity while minimizing cost and time. Consider the following:</p>
-<div id="a-sample-specific-challenges" class="section level4">
-<h4>a) Sample-Specific Challenges</h4>
-<ul>
-<li><strong>Plants:</strong> High levels of polysaccharides and
-polyphenols can inhibit downstream reactions. Use CTAB and PVP.</li>
-<li><strong>Animal tissues:</strong> Rich in proteins and lipids.
-Proteinase K and SDS are essential.</li>
-<li><strong>Microbes:</strong> Require mechanical lysis (bead beating)
-or lysozyme digestion.</li>
-<li><strong>FFPE samples:</strong> Require deparaffinization and
-prolonged proteinase digestion.</li>
-</ul>
-</div>
-<div id="b-dna-quality-metrics" class="section level4">
-<h4>b) DNA Quality Metrics</h4>
-<ul>
-<li><strong>A260/A280 ratio (~1.8):</strong> Indicates protein
-contamination.</li>
-<li><strong>A260/A230 ratio (&gt;2.0):</strong> Indicates salt or phenol
-contamination.</li>
-<li><strong>Gel electrophoresis:</strong> Assesses integrity and
-shearing.</li>
-</ul>
-</div>
-<div id="c-inhibitor-removal" class="section level4">
-<h4>c) Inhibitor Removal</h4>
-<ul>
-<li>Use silica column purification or magnetic beads for clean-up.</li>
-<li>Incorporate wash buffers with ethanol and Tris to remove
-carryover.</li>
-</ul>
-</div>
-<div id="d-yield-maximization" class="section level4">
-<h4>d) Yield Maximization</h4>
-<ul>
-<li>Minimize sample loss during transfer steps.</li>
-<li>Avoid over-drying DNA pellets.</li>
-<li>Elute in low-salt buffer (e.g., 10 mM Tris, pH 8.0) or nuclease-free
-water.</li>
-</ul>
-<hr />
-</div>
-</div>
-<div id="a-standard-ctab-based-plant-dna-extraction-protocol-example"
-class="section level3">
-<h3>4. A Standard CTAB-Based Plant DNA Extraction Protocol
-(Example)</h3>
-<p><strong>Materials:</strong> - CTAB buffer (2% CTAB, 100 mM Tris-HCl
-pH 8, 20 mM EDTA, 1.4 M NaCl) - β-mercaptoethanol (freshly added) -
-Chloroform:Isoamyl alcohol (24:1) - Isopropanol - Ethanol (70%)</p>
-<p><strong>Steps:</strong> 1. Grind ~100 mg fresh/frozen leaf in liquid
-nitrogen. 2. Add 700 µL prewarmed CTAB buffer + 1% β-mercaptoethanol. 3.
-Incubate at 65°C for 30 minutes. 4. Add equal volume of
-chloroform:isoamyl alcohol. Mix and centrifuge. 5. Transfer aqueous
-phase. Add 0.7 volume of cold isopropanol. 6. Incubate at -20°C for 1
-hour. Centrifuge and pellet DNA. 7. Wash pellet with 70% ethanol.
-Air-dry. 8. Resuspend in TE buffer or nuclease-free water.</p>
-<hr />
 </div>
 <div id="conclusion" class="section level3">
-<h3>5. Conclusion</h3>
-<p>DNA extraction protocols must be tailored to the sample type and
-purpose. Understanding the role of each reagent and the logic of
-extraction steps allows researchers to troubleshoot and optimize for
-high-quality, inhibitor-free DNA. Advances in automation, magnetic bead
-purification, and microfluidics continue to evolve this foundati</p>
+<h3>Conclusion</h3>
+<p>Spatial omics is reshaping biology by embedding molecular data in
+physical space. It expands our capacity to understand tissues in their
+full architectural and functional context. Whether in cancer,
+neuroscience, or plant biology, spatial omics provides a systemic lens
+for answering spatially grounded biological questions—and is rapidly
+advancing toward clinical translation.</p>
 </div>
 
 

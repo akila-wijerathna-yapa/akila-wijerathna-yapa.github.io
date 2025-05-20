@@ -1,0 +1,109 @@
+---
+title: "Spatial Omics"
+---
+
+Spatial omics is a transformative suite of high-throughput technologies that enables the mapping of molecular features—such as transcripts, proteins, metabolites, and epigenomic marks—within their precise spatial context in tissue sections. Unlike bulk and single-cell omics approaches that dissociate cells from their microenvironment, spatial omics preserves tissue architecture, providing insights into cell–cell communication, tissue heterogeneity, developmental gradients, and the structural underpinnings of disease.
+
+### Biological Significance
+
+Spatial omics offers contextualized data that aligns with key biological questions. For example, understanding immune infiltration in tumors, neural architecture in the brain, or zonation in liver and plant tissues requires spatially resolved data. Importantly, spatial methods complement, but do not replace, traditional omics—each has advantages depending on the research question.
+
+### Spatial Technology Modalities
+
+Spatial omics platforms fall into two broad categories: **imaging-based** and **sequencing-based**.
+
+#### Imaging-Based Platforms
+These include technologies like Xenium (10x Genomics), CosMx SMI (NanoString), MERSCOPE (Vizgen), CODEX (Akoya), and IMC/MIBI (Fluidigm/IonPath). They use fluorescent imaging or mass cytometry to detect labeled RNA or proteins directly in tissue sections with subcellular resolution (30–100 nm).
+
+- **Xenium:** Single-molecule RNA detection (~100 nm) with fixed panels.
+- **CosMx SMI:** Simultaneous RNA and protein detection (100–200 nm).
+- **MERSCOPE:** Ultra-high resolution RNA detection via MERFISH (~30–50 nm).
+- **CODEX:** Iterative fluorescence imaging of proteins (~40–60+ markers).
+- **IMC/MIBI:** Metal-tagged antibody imaging for deep protein profiling (~1 µm).
+
+#### Sequencing-Based Platforms
+Platforms like Visium HD, Stereo-seq, Slide-seq, PIXEL-seq, and Seq-Scope capture spatial transcriptomes using spatial barcoded arrays and next-generation sequencing.
+
+- **Visium HD:** 2 µm resolution, whole transcriptome, robust workflows.
+- **Stereo-seq:** Submicron RNA resolution (0.5–0.7 µm), high coverage.
+- **Slide-seq v2:** 10 µm resolution, bead-based capture.
+- **PIXEL-seq & Seq-Scope:** Experimental platforms offering subcellular mapping capabilities.
+
+### Platform Principles and Considerations
+
+Each platform varies in resolution, detection chemistry, sample compatibility, and computational requirements.
+
+- **Probe Design:** Affects signal strength and specificity.
+- **Amplification Strategy:** Rolling circle amplification (e.g., Xenium) improves sensitivity but may introduce bias.
+- **Spatial Decoding:** Single-molecule (MERFISH) vs. spot-based (Visium).
+- **Tissue Properties:** Affect RNA diffusion, signal stability, and segmentation accuracy.
+- **Segmentation:** Defining cell boundaries remains a key challenge across platforms.
+
+### Computational Ecosystem
+
+Spatial omics data analysis is resource-intensive, involving:
+
+- **Preprocessing** and **cell/spot segmentation**
+- **Spatial clustering** and **neighborhood analysis**
+- **Ligand–receptor inference** and **trajectory modeling**
+
+Tools include:
+
+- **Seurat (R):** Beginner-friendly, scRNA-seq integration.
+- **Scanpy (Python):** Flexible, scalable, custom workflows.
+- **Giotto (R):** Spatial-specific tools with visualization and segmentation.
+- **Squidpy (Python):** Advanced spatial statistics, neighborhood modeling.
+
+### Expanding Beyond Transcriptomics
+
+#### Spatial Proteomics
+- **CODEX, IBEX:** Iterative antibody-based imaging for 40–60+ proteins.
+- **IMC/MIBI:** Mass cytometry-based, no spectral overlap.
+
+#### Spatial Metabolomics & Lipidomics
+- **MALDI-MSI:** High spatial resolution (5–100 µm) for metabolite mapping.
+- **DESI-MSI:** Ambient ionization, minimal preparation.
+- **SIMS:** Sub-100 nm resolution for lipids/elements, high spatial detail.
+
+#### Spatial Epigenomics
+- **Spatial ATAC-seq:** Chromatin accessibility in space.
+- **DNA-MERFISH:** Labeling repetitive elements and histone modifications.
+- **CUT&Tag/CUT&RUN adaptations:** Spatial profiling of histone marks.
+
+### Multimodal Integration
+
+New workflows combine multiple molecular layers:
+
+- **Visium + Immunofluorescence**: Transcriptome + protein.
+- **Spatial-ATAC + RNA-seq**: Epigenome + transcriptome.
+- **CODEX + MIBI**: Serial or registered tissue sections.
+- **Spatial Lipidomics + MSI**: Co-mapping of lipid and metabolic gradients.
+
+### Applications in Cancer Biology
+
+#### Tumor Microenvironment
+- Spatial profiling reveals immune cell niches, stromal barriers, and tertiary lymphoid structures (TLS).
+- **GeoMX DSP** is used for targeted transcriptomic and proteomic analysis of specific regions.
+
+#### Cancer Neuroscience
+- Spatial omics maps tumor–nerve interactions.
+- **SCOTIA**: A Python package to infer spatial cell–cell interaction patterns.
+
+#### Retrospective Analysis of FFPE Samples
+- Spatial omics compatibility with FFPE enables mining decades of archival samples.
+- Opens doors to rare cancer analysis and translational discovery.
+
+### Technological Needs and Future Directions
+
+| Innovation Area              | Description                                      |
+|-----------------------------|--------------------------------------------------|
+| 3D Spatial Reconstruction   | Volumetric tissue architecture and nerve tracing |
+| Target-Agnostic Proteomics  | Mass spectrometry-based protein discovery        |
+| Temporal Resolution         | Lineage tracking, turnover within space          |
+| Retrospective Multiomics    | Joint H&E, spatial, and bulk data integration    |
+| Expanded Panel Diversity    | Inclusive profiling of neglected tissue systems  |
+
+
+### Conclusion
+
+Spatial omics is reshaping biology by embedding molecular data in physical space. It expands our capacity to understand tissues in their full architectural and functional context. Whether in cancer, neuroscience, or plant biology, spatial omics provides a systemic lens for answering spatially grounded biological questions—and is rapidly advancing toward clinical translation.

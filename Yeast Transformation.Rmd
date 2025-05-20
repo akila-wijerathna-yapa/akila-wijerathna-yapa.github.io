@@ -1,0 +1,77 @@
+---
+title: "Yeast Transformation Protocols"
+---
+
+Yeast transformation refers to the introduction of foreign DNA into yeast cells to study gene function, express heterologous proteins, or generate genetically modified strains. Saccharomyces cerevisiae and other yeast species are widely used as model eukaryotic systems due to their genetic tractability and similarity to higher eukaryotic cells.
+
+---
+
+### Logic of Yeast Transformation
+
+The goal of transformation is to enable yeast cells to uptake exogenous DNA—typically plasmids or linear fragments—and express new genetic material. This process mimics natural competence but is enhanced by chemical and physical methods. Integration can occur via homologous recombination or episomal maintenance, depending on the vector design and the transformation approach.
+
+---
+
+### Chemicals Used and Their Functions
+
+| Chemical/Reagent         | Function                                                                      |
+|-------------------------|-------------------------------------------------------------------------------|
+| **Polyethylene glycol (PEG)** | Promotes DNA-cell membrane interaction and facilitates uptake               |
+| **Lithium acetate (LiAc)**    | Increases cell membrane permeability by disrupting cell wall integrity       |
+| **Single-stranded DNA (ssDNA)**| Blocks nucleases and helps anneal transforming DNA to the yeast genome      |
+| **Tris-HCl**                 | Buffers the solution and stabilizes pH during transformation                |
+| **EDTA**                    | Chelates divalent cations, minimizing nuclease activity                      |
+| **Heat shock**              | Transiently disrupts membrane structure, increasing transformation efficiency |
+| **Carrier DNA (e.g., salmon sperm DNA)** | Enhances efficiency by saturating nucleases and facilitating DNA uptake |
+
+---
+
+### Steps in Yeast Transformation (LiAc/PEG Method)
+
+1. **Cell Preparation**  
+   Grow yeast culture to mid-log phase (OD600 ~0.4–0.8) to ensure high competence.
+
+2. **Washing and Conditioning**  
+   Pellet cells and wash in sterile water or TE buffer. Resuspend in LiAc solution to permeabilize cell walls.
+
+3. **Transformation Mix**  
+   Add transforming DNA, boiled salmon sperm DNA (as carrier), PEG solution, and LiAc. Mix thoroughly.
+
+4. **Incubation and Heat Shock**  
+   Incubate at 30°C for 30 minutes, then heat shock at 42°C for 15–20 minutes to facilitate DNA uptake.
+
+5. **Recovery and Plating**  
+   Pellet cells, resuspend in sterile water or YPD, and plate onto selective media (e.g., -URA, -LEU) depending on marker.
+
+---
+
+### Optimization Strategies
+
+- **Cell Density:** Use cells at mid-log phase for optimal competence.
+- **Fresh PEG and LiAc Solutions:** Ensure consistency and reproducibility.
+- **Carrier DNA:** Use freshly boiled and chilled ssDNA to protect transforming DNA.
+- **Heat Shock Time:** Adjust depending on yeast strain and vector type.
+- **DNA Amount and Purity:** Use 1–5 µg of highly pure DNA (plasmid or PCR product).
+
+---
+
+### Assessment and Confirmation
+
+- **Colony Growth:** Transformation efficiency assessed by colony number on selective plates.
+- **PCR Screening:** Confirm integration or plasmid presence using colony PCR.
+- **Reporter Assays:** GFP, lacZ, or luciferase reporters can be used to confirm gene expression.
+
+---
+
+### Applications
+
+- Gene knockout or tagging via homologous recombination
+- Expression of recombinant proteins
+- Synthetic biology and metabolic engineering
+- Functional genomics and gene complementation studies
+
+---
+
+### Conclusion
+
+Yeast transformation is a robust and adaptable method for genetic manipulation. A mechanistic understanding of chemical interactions and membrane permeability aids in protocol optimization. With proper controls and optimization, this method underpins both fundamental research and industrial biotechnology.

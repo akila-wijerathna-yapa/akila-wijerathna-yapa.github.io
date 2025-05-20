@@ -1,0 +1,95 @@
+---
+title: "Homozygous Transgenic Selection Protocols"
+---
+
+The selection of homozygous transgenic lines is a critical step in plant molecular biology to ensure stable inheritance and uniform expression of introduced traits. Using *Arabidopsis thaliana* as a model system, this protocol outlines the rationale, reagents, and best practices for isolating homozygous individuals from segregating T1 and T2 populations.
+
+---
+
+### Logic of Homozygous Selection
+
+Following Agrobacterium-mediated transformation (e.g., floral dip), the T1 generation of *Arabidopsis* plants is typically hemizygous for the transgene. Mendelian segregation occurs in the T2 generation:
+
+- Homozygous (2 copies of transgene)
+- Heterozygous (1 copy)
+- Null (no transgene)
+
+To obtain homozygous lines, T2 seeds are screened under selective conditions. Lines showing 100% survival in T3 progeny are classified as homozygous.
+
+---
+
+### Chemicals Used and Their Functions
+
+| Chemical/Reagent               | Function                                                             |
+|-------------------------------|----------------------------------------------------------------------|
+| **Antibiotic (e.g., Kanamycin, Hygromycin)** | Selects for plants containing the resistance transgene              |
+| **Murashige and Skoog (MS) Medium**         | Provides nutrients for seed germination and growth                 |
+| **Sucrose (1–2%)**                         | Energy source for in vitro germination                             |
+| **Agar (0.8%)**                            | Solidifying agent                                                  |
+| **MES buffer (pH 5.7)**                    | Stabilizes medium pH                                               |
+| **Tween-20 (0.02%)**                       | Improves surface sterilization during seed preparation             |
+| **Bleach (e.g., 50% sodium hypochlorite)** | Surface sterilization of seeds                                     |
+
+---
+
+### Step-by-Step Protocol Using *Arabidopsis thaliana*
+
+#### 1. **Seed Collection (T2 Generation)**
+   - Harvest seeds from individual T1 plants (one plant per line).
+   - Label and store seeds in dry, cool conditions.
+
+#### 2. **Seed Sterilization**
+   - Soak seeds in 50% bleach with 0.02% Tween-20 for 5–10 minutes.
+   - Wash 3–4 times with sterile distilled water.
+
+#### 3. **Sowing on Selection Media**
+   - Prepare MS agar plates with antibiotic (e.g., 50 mg/L kanamycin).
+   - Sow sterilized seeds on media, stratify at 4°C in dark for 2–3 days.
+   - Transfer plates to a growth chamber (22°C, 16-h light/8-h dark).
+
+#### 4. **Scoring of Seedlings**
+   - At 7–10 days post-germination, assess resistance:
+     - **Green, expanded cotyledons and roots:** Resistant
+     - **Bleached, stunted seedlings:** Sensitive
+   - Record number of resistant vs. sensitive seedlings for each line.
+
+#### 5. **Selection of Homozygous Lines**
+   - Expected 3:1 segregation ratio in heterozygous T2 lines.
+   - Lines with 100% resistant seedlings likely homozygous.
+   - Transplant healthy T2 seedlings to soil and grow to maturity.
+
+#### 6. **Validation in T3 Generation**
+   - Harvest T3 seeds from candidate lines.
+   - Re-test on selection media to confirm 100% resistance.
+
+---
+
+### Optimization Strategies
+
+- **Antibiotic Concentration:** Use empirically validated doses (e.g., 50 mg/L kanamycin or 30 mg/L hygromycin).
+- **Media Preparation:** Adjust sucrose and pH to support optimal germination.
+- **Growth Conditions:** Uniform light and temperature reduce phenotypic variability.
+- **Include Controls:** Use wild-type seeds as negative controls on selection media.
+- **Multiple Seeds per Line:** Test ≥50 seeds per T2 line to ensure accurate segregation ratio.
+
+---
+
+### Confirmatory Analysis
+
+- **PCR Genotyping:** Use gene-specific primers to verify presence of the transgene.
+- **qPCR or RT-PCR:** Assess transgene expression level.
+- **Western Blot or Reporter Assays:** Confirm protein-level expression (e.g., GFP, GUS).
+
+---
+
+### Applications
+
+- Functional gene studies using overexpression or RNAi lines
+- Reporter gene analysis under specific promoters
+- CRISPR/Cas9 transgene segregation and stable line identification
+
+---
+
+### Conclusion
+
+Selecting homozygous transgenic *Arabidopsis* lines ensures consistency and heritability of transgene expression. A combination of phenotypic selection, segregation analysis, and molecular confirmation enables accurate identification and propagation of stable transgenic lines for downstream functional studies.

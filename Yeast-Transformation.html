@@ -11,7 +11,7 @@
 
 
 
-<title>DNA Extraction Protocols</title>
+<title>Yeast Transformation Protocols</title>
 
 <script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -327,167 +327,145 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">DNA Extraction Protocols</h1>
+<h1 class="title toc-ignore">Yeast Transformation Protocols</h1>
 
 </div>
 
 
-<p>DNA extraction is a fundamental procedure in molecular biology,
-underpinning a vast array of downstream applications including PCR,
-sequencing, cloning, and genotyping. An effective DNA extraction
-protocol must efficiently lyse cells, protect nucleic acids from
-degradation, and purify DNA away from proteins, polysaccharides, and
-other contaminants.</p>
-<p>This page outlines the logic behind DNA extraction, common reagents
-and their biochemical functions, and principles for optimizing protocols
-across various sample types.</p>
+<p>Yeast transformation refers to the introduction of foreign DNA into
+yeast cells to study gene function, express heterologous proteins, or
+generate genetically modified strains. Saccharomyces cerevisiae and
+other yeast species are widely used as model eukaryotic systems due to
+their genetic tractability and similarity to higher eukaryotic
+cells.</p>
 <hr />
-<div id="logic-behind-dna-extraction" class="section level3">
-<h3>1. Logic Behind DNA Extraction</h3>
-<p>A successful DNA extraction protocol typically involves the following
-sequential steps:</p>
-<ol style="list-style-type: decimal">
-<li><strong>Cell lysis</strong>: Disrupts cell membranes and releases
-intracellular components.</li>
-<li><strong>DNA stabilization</strong>: Inhibits nucleases that degrade
-DNA.</li>
-<li><strong>Protein and contaminant removal</strong>: Precipitates or
-separates proteins, lipids, and polysaccharides.</li>
-<li><strong>DNA precipitation or binding</strong>: Concentrates and
-isolates DNA.</li>
-<li><strong>DNA wash and elution</strong>: Removes residual contaminants
-and recovers purified DNA.</li>
-</ol>
-<p>These steps can be adapted to suit the biological material (plant,
-animal, microbial, or environmental) and intended downstream
-application.</p>
+<div id="logic-of-yeast-transformation" class="section level3">
+<h3>Logic of Yeast Transformation</h3>
+<p>The goal of transformation is to enable yeast cells to uptake
+exogenous DNA—typically plasmids or linear fragments—and express new
+genetic material. This process mimics natural competence but is enhanced
+by chemical and physical methods. Integration can occur via homologous
+recombination or episomal maintenance, depending on the vector design
+and the transformation approach.</p>
 <hr />
 </div>
 <div id="chemicals-used-and-their-functions" class="section level3">
-<h3>2. Chemicals Used and Their Functions</h3>
+<h3>Chemicals Used and Their Functions</h3>
 <table>
 <colgroup>
-<col width="27%" />
-<col width="72%" />
+<col width="24%" />
+<col width="75%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th>Reagent</th>
+<th>Chemical/Reagent</th>
 <th>Function</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
+<td><strong>Polyethylene glycol (PEG)</strong></td>
+<td>Promotes DNA-cell membrane interaction and facilitates uptake</td>
+</tr>
+<tr class="even">
+<td><strong>Lithium acetate (LiAc)</strong></td>
+<td>Increases cell membrane permeability by disrupting cell wall
+integrity</td>
+</tr>
+<tr class="odd">
+<td><strong>Single-stranded DNA (ssDNA)</strong></td>
+<td>Blocks nucleases and helps anneal transforming DNA to the yeast
+genome</td>
+</tr>
+<tr class="even">
 <td><strong>Tris-HCl</strong></td>
-<td>Buffers pH and maintains a stable environment for DNA integrity</td>
+<td>Buffers the solution and stabilizes pH during transformation</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><strong>EDTA</strong></td>
-<td>Chelates divalent cations (e.g., Mg²⁺), inhibiting DNases</td>
-</tr>
-<tr class="odd">
-<td><strong>SDS (Sodium dodecyl sulfate)</strong></td>
-<td>Disrupts lipid membranes and denatures proteins</td>
+<td>Chelates divalent cations, minimizing nuclease activity</td>
 </tr>
 <tr class="even">
-<td><strong>CTAB (cetyltrimethylammonium bromide)</strong></td>
-<td>Binds polysaccharides and removes complex carbohydrates (plant
-DNA)</td>
+<td><strong>Heat shock</strong></td>
+<td>Transiently disrupts membrane structure, increasing transformation
+efficiency</td>
 </tr>
 <tr class="odd">
-<td><strong>Proteinase K</strong></td>
-<td>Degrades proteins, including histones and nucleases</td>
-</tr>
-<tr class="even">
-<td><strong>Phenol-chloroform</strong></td>
-<td>Separates proteins from nucleic acids via phase separation</td>
-</tr>
-<tr class="odd">
-<td><strong>Isopropanol or Ethanol</strong></td>
-<td>Precipitates DNA from aqueous solution</td>
-</tr>
-<tr class="even">
-<td><strong>NaCl or KCl</strong></td>
-<td>Enhances protein precipitation and stabilizes DNA structure</td>
-</tr>
-<tr class="odd">
-<td><strong>RNase A</strong></td>
-<td>Degrades RNA to purify DNA preparations</td>
+<td><strong>Carrier DNA (e.g., salmon sperm DNA)</strong></td>
+<td>Enhances efficiency by saturating nucleases and facilitating DNA
+uptake</td>
 </tr>
 </tbody>
 </table>
 <hr />
 </div>
-<div id="optimizing-a-dna-extraction-protocol" class="section level3">
-<h3>3. Optimizing a DNA Extraction Protocol</h3>
-<p>Optimizing DNA extraction requires balancing purity, yield, and
-integrity while minimizing cost and time. Consider the following:</p>
-<div id="a-sample-specific-challenges" class="section level4">
-<h4>a) Sample-Specific Challenges</h4>
-<ul>
-<li><strong>Plants:</strong> High levels of polysaccharides and
-polyphenols can inhibit downstream reactions. Use CTAB and PVP.</li>
-<li><strong>Animal tissues:</strong> Rich in proteins and lipids.
-Proteinase K and SDS are essential.</li>
-<li><strong>Microbes:</strong> Require mechanical lysis (bead beating)
-or lysozyme digestion.</li>
-<li><strong>FFPE samples:</strong> Require deparaffinization and
-prolonged proteinase digestion.</li>
-</ul>
+<div id="steps-in-yeast-transformation-liacpeg-method"
+class="section level3">
+<h3>Steps in Yeast Transformation (LiAc/PEG Method)</h3>
+<ol style="list-style-type: decimal">
+<li><p><strong>Cell Preparation</strong><br />
+Grow yeast culture to mid-log phase (OD600 ~0.4–0.8) to ensure high
+competence.</p></li>
+<li><p><strong>Washing and Conditioning</strong><br />
+Pellet cells and wash in sterile water or TE buffer. Resuspend in LiAc
+solution to permeabilize cell walls.</p></li>
+<li><p><strong>Transformation Mix</strong><br />
+Add transforming DNA, boiled salmon sperm DNA (as carrier), PEG
+solution, and LiAc. Mix thoroughly.</p></li>
+<li><p><strong>Incubation and Heat Shock</strong><br />
+Incubate at 30°C for 30 minutes, then heat shock at 42°C for 15–20
+minutes to facilitate DNA uptake.</p></li>
+<li><p><strong>Recovery and Plating</strong><br />
+Pellet cells, resuspend in sterile water or YPD, and plate onto
+selective media (e.g., -URA, -LEU) depending on marker.</p></li>
+</ol>
+<hr />
 </div>
-<div id="b-dna-quality-metrics" class="section level4">
-<h4>b) DNA Quality Metrics</h4>
+<div id="optimization-strategies" class="section level3">
+<h3>Optimization Strategies</h3>
 <ul>
-<li><strong>A260/A280 ratio (~1.8):</strong> Indicates protein
-contamination.</li>
-<li><strong>A260/A230 ratio (&gt;2.0):</strong> Indicates salt or phenol
-contamination.</li>
-<li><strong>Gel electrophoresis:</strong> Assesses integrity and
-shearing.</li>
-</ul>
-</div>
-<div id="c-inhibitor-removal" class="section level4">
-<h4>c) Inhibitor Removal</h4>
-<ul>
-<li>Use silica column purification or magnetic beads for clean-up.</li>
-<li>Incorporate wash buffers with ethanol and Tris to remove
-carryover.</li>
-</ul>
-</div>
-<div id="d-yield-maximization" class="section level4">
-<h4>d) Yield Maximization</h4>
-<ul>
-<li>Minimize sample loss during transfer steps.</li>
-<li>Avoid over-drying DNA pellets.</li>
-<li>Elute in low-salt buffer (e.g., 10 mM Tris, pH 8.0) or nuclease-free
-water.</li>
+<li><strong>Cell Density:</strong> Use cells at mid-log phase for
+optimal competence.</li>
+<li><strong>Fresh PEG and LiAc Solutions:</strong> Ensure consistency
+and reproducibility.</li>
+<li><strong>Carrier DNA:</strong> Use freshly boiled and chilled ssDNA
+to protect transforming DNA.</li>
+<li><strong>Heat Shock Time:</strong> Adjust depending on yeast strain
+and vector type.</li>
+<li><strong>DNA Amount and Purity:</strong> Use 1–5 µg of highly pure
+DNA (plasmid or PCR product).</li>
 </ul>
 <hr />
 </div>
+<div id="assessment-and-confirmation" class="section level3">
+<h3>Assessment and Confirmation</h3>
+<ul>
+<li><strong>Colony Growth:</strong> Transformation efficiency assessed
+by colony number on selective plates.</li>
+<li><strong>PCR Screening:</strong> Confirm integration or plasmid
+presence using colony PCR.</li>
+<li><strong>Reporter Assays:</strong> GFP, lacZ, or luciferase reporters
+can be used to confirm gene expression.</li>
+</ul>
+<hr />
 </div>
-<div id="a-standard-ctab-based-plant-dna-extraction-protocol-example"
-class="section level3">
-<h3>4. A Standard CTAB-Based Plant DNA Extraction Protocol
-(Example)</h3>
-<p><strong>Materials:</strong> - CTAB buffer (2% CTAB, 100 mM Tris-HCl
-pH 8, 20 mM EDTA, 1.4 M NaCl) - β-mercaptoethanol (freshly added) -
-Chloroform:Isoamyl alcohol (24:1) - Isopropanol - Ethanol (70%)</p>
-<p><strong>Steps:</strong> 1. Grind ~100 mg fresh/frozen leaf in liquid
-nitrogen. 2. Add 700 µL prewarmed CTAB buffer + 1% β-mercaptoethanol. 3.
-Incubate at 65°C for 30 minutes. 4. Add equal volume of
-chloroform:isoamyl alcohol. Mix and centrifuge. 5. Transfer aqueous
-phase. Add 0.7 volume of cold isopropanol. 6. Incubate at -20°C for 1
-hour. Centrifuge and pellet DNA. 7. Wash pellet with 70% ethanol.
-Air-dry. 8. Resuspend in TE buffer or nuclease-free water.</p>
+<div id="applications" class="section level3">
+<h3>Applications</h3>
+<ul>
+<li>Gene knockout or tagging via homologous recombination</li>
+<li>Expression of recombinant proteins</li>
+<li>Synthetic biology and metabolic engineering</li>
+<li>Functional genomics and gene complementation studies</li>
+</ul>
 <hr />
 </div>
 <div id="conclusion" class="section level3">
-<h3>5. Conclusion</h3>
-<p>DNA extraction protocols must be tailored to the sample type and
-purpose. Understanding the role of each reagent and the logic of
-extraction steps allows researchers to troubleshoot and optimize for
-high-quality, inhibitor-free DNA. Advances in automation, magnetic bead
-purification, and microfluidics continue to evolve this foundati</p>
+<h3>Conclusion</h3>
+<p>Yeast transformation is a robust and adaptable method for genetic
+manipulation. A mechanistic understanding of chemical interactions and
+membrane permeability aids in protocol optimization. With proper
+controls and optimization, this method underpins both fundamental
+research and industrial biotechnology.</p>
 </div>
 
 

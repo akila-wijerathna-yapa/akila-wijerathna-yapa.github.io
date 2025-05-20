@@ -11,7 +11,7 @@
 
 
 
-<title>DNA Extraction Protocols</title>
+<title>RNA Extraction Protocols</title>
 
 <script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -327,167 +327,147 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">DNA Extraction Protocols</h1>
+<h1 class="title toc-ignore">RNA Extraction Protocols</h1>
 
 </div>
 
 
-<p>DNA extraction is a fundamental procedure in molecular biology,
-underpinning a vast array of downstream applications including PCR,
-sequencing, cloning, and genotyping. An effective DNA extraction
-protocol must efficiently lyse cells, protect nucleic acids from
-degradation, and purify DNA away from proteins, polysaccharides, and
-other contaminants.</p>
-<p>This page outlines the logic behind DNA extraction, common reagents
-and their biochemical functions, and principles for optimizing protocols
-across various sample types.</p>
+<p>RNA extraction is a critical procedure in molecular biology that
+enables the isolation of intact and high-purity RNA from various
+biological samples. It serves as the foundation for downstream
+applications such as reverse transcription, quantitative PCR (qPCR),
+RNA-sequencing, and transcriptomic analyses. The integrity and yield of
+RNA are highly dependent on the extraction strategy, choice of reagents,
+and optimization of procedural steps.</p>
 <hr />
-<div id="logic-behind-dna-extraction" class="section level3">
-<h3>1. Logic Behind DNA Extraction</h3>
-<p>A successful DNA extraction protocol typically involves the following
-sequential steps:</p>
-<ol style="list-style-type: decimal">
-<li><strong>Cell lysis</strong>: Disrupts cell membranes and releases
-intracellular components.</li>
-<li><strong>DNA stabilization</strong>: Inhibits nucleases that degrade
-DNA.</li>
-<li><strong>Protein and contaminant removal</strong>: Precipitates or
-separates proteins, lipids, and polysaccharides.</li>
-<li><strong>DNA precipitation or binding</strong>: Concentrates and
-isolates DNA.</li>
-<li><strong>DNA wash and elution</strong>: Removes residual contaminants
-and recovers purified DNA.</li>
-</ol>
-<p>These steps can be adapted to suit the biological material (plant,
-animal, microbial, or environmental) and intended downstream
-application.</p>
+<div id="logic-of-rna-extraction" class="section level3">
+<h3>Logic of RNA Extraction</h3>
+<p>RNA extraction involves cell lysis, inactivation of ribonucleases
+(RNases), separation of RNA from DNA and proteins, and finally RNA
+precipitation and purification. The fundamental goal is to release RNA
+from the cell while preserving its structural integrity and avoiding
+degradation.</p>
 <hr />
 </div>
 <div id="chemicals-used-and-their-functions" class="section level3">
-<h3>2. Chemicals Used and Their Functions</h3>
+<h3>Chemicals Used and Their Functions</h3>
 <table>
 <colgroup>
-<col width="27%" />
-<col width="72%" />
+<col width="28%" />
+<col width="71%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th>Reagent</th>
+<th>Chemical/Reagent</th>
 <th>Function</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Tris-HCl</strong></td>
-<td>Buffers pH and maintains a stable environment for DNA integrity</td>
+<td><strong>Guanidinium thiocyanate</strong></td>
+<td>Strong chaotropic agent; denatures proteins and inactivates
+RNases</td>
+</tr>
+<tr class="even">
+<td><strong>Phenol:Chloroform</strong></td>
+<td>Separates RNA from DNA and proteins via phase separation</td>
+</tr>
+<tr class="odd">
+<td><strong>Isopropanol</strong></td>
+<td>Precipitates RNA by reducing solubility</td>
+</tr>
+<tr class="even">
+<td><strong>Ethanol (70%)</strong></td>
+<td>Washes RNA pellet to remove salts and impurities</td>
+</tr>
+<tr class="odd">
+<td><strong>β-mercaptoethanol/DTT</strong></td>
+<td>Reduces disulfide bonds; enhances RNase inactivation</td>
+</tr>
+<tr class="even">
+<td><strong>Sodium acetate/NaCl</strong></td>
+<td>Provides cations to facilitate RNA precipitation</td>
+</tr>
+<tr class="odd">
+<td><strong>Tris-HCl (pH 7–8)</strong></td>
+<td>Buffers and stabilizes RNA during resuspension</td>
 </tr>
 <tr class="even">
 <td><strong>EDTA</strong></td>
-<td>Chelates divalent cations (e.g., Mg²⁺), inhibiting DNases</td>
+<td>Chelates divalent ions (Mg²⁺, Ca²⁺); inhibits RNase activity</td>
 </tr>
 <tr class="odd">
-<td><strong>SDS (Sodium dodecyl sulfate)</strong></td>
-<td>Disrupts lipid membranes and denatures proteins</td>
-</tr>
-<tr class="even">
-<td><strong>CTAB (cetyltrimethylammonium bromide)</strong></td>
-<td>Binds polysaccharides and removes complex carbohydrates (plant
-DNA)</td>
-</tr>
-<tr class="odd">
-<td><strong>Proteinase K</strong></td>
-<td>Degrades proteins, including histones and nucleases</td>
-</tr>
-<tr class="even">
-<td><strong>Phenol-chloroform</strong></td>
-<td>Separates proteins from nucleic acids via phase separation</td>
-</tr>
-<tr class="odd">
-<td><strong>Isopropanol or Ethanol</strong></td>
-<td>Precipitates DNA from aqueous solution</td>
-</tr>
-<tr class="even">
-<td><strong>NaCl or KCl</strong></td>
-<td>Enhances protein precipitation and stabilizes DNA structure</td>
-</tr>
-<tr class="odd">
-<td><strong>RNase A</strong></td>
-<td>Degrades RNA to purify DNA preparations</td>
+<td><strong>DEPC-treated water</strong></td>
+<td>RNase-free water used to resuspend RNA</td>
 </tr>
 </tbody>
 </table>
 <hr />
 </div>
-<div id="optimizing-a-dna-extraction-protocol" class="section level3">
-<h3>3. Optimizing a DNA Extraction Protocol</h3>
-<p>Optimizing DNA extraction requires balancing purity, yield, and
-integrity while minimizing cost and time. Consider the following:</p>
-<div id="a-sample-specific-challenges" class="section level4">
-<h4>a) Sample-Specific Challenges</h4>
+<div id="steps-in-rna-extraction" class="section level3">
+<h3>Steps in RNA Extraction</h3>
+<ol style="list-style-type: decimal">
+<li><p><strong>Tissue Disruption and Cell Lysis</strong><br />
+Homogenize tissue in a lysis buffer containing guanidinium thiocyanate
+and β-mercaptoethanol. This ensures RNase inactivation and
+solubilization of cellular components.</p></li>
+<li><p><strong>Phase Separation (if using TRIzol or Acid-Phenol
+Method)</strong><br />
+Add acidified phenol and chloroform, then centrifuge. This yields:</p>
 <ul>
-<li><strong>Plants:</strong> High levels of polysaccharides and
-polyphenols can inhibit downstream reactions. Use CTAB and PVP.</li>
-<li><strong>Animal tissues:</strong> Rich in proteins and lipids.
-Proteinase K and SDS are essential.</li>
-<li><strong>Microbes:</strong> Require mechanical lysis (bead beating)
-or lysozyme digestion.</li>
-<li><strong>FFPE samples:</strong> Require deparaffinization and
-prolonged proteinase digestion.</li>
-</ul>
+<li>Upper aqueous phase: RNA</li>
+<li>Interphase: DNA</li>
+<li>Organic phase: Proteins</li>
+</ul></li>
+<li><p><strong>RNA Precipitation</strong><br />
+Transfer aqueous phase to a new tube and add isopropanol (or ethanol
+with salt). Incubate and centrifuge to pellet RNA.</p></li>
+<li><p><strong>RNA Washing</strong><br />
+Wash the RNA pellet with 70% ethanol to remove residual salts and
+organic contaminants.</p></li>
+<li><p><strong>RNA Resuspension</strong><br />
+Air-dry the pellet and resuspend in RNase-free water or TE
+buffer.</p></li>
+</ol>
+<hr />
 </div>
-<div id="b-dna-quality-metrics" class="section level4">
-<h4>b) DNA Quality Metrics</h4>
+<div id="optimization-strategies" class="section level3">
+<h3>Optimization Strategies</h3>
 <ul>
-<li><strong>A260/A280 ratio (~1.8):</strong> Indicates protein
-contamination.</li>
-<li><strong>A260/A230 ratio (&gt;2.0):</strong> Indicates salt or phenol
-contamination.</li>
-<li><strong>Gel electrophoresis:</strong> Assesses integrity and
-shearing.</li>
-</ul>
-</div>
-<div id="c-inhibitor-removal" class="section level4">
-<h4>c) Inhibitor Removal</h4>
-<ul>
-<li>Use silica column purification or magnetic beads for clean-up.</li>
-<li>Incorporate wash buffers with ethanol and Tris to remove
-carryover.</li>
-</ul>
-</div>
-<div id="d-yield-maximization" class="section level4">
-<h4>d) Yield Maximization</h4>
-<ul>
-<li>Minimize sample loss during transfer steps.</li>
-<li>Avoid over-drying DNA pellets.</li>
-<li>Elute in low-salt buffer (e.g., 10 mM Tris, pH 8.0) or nuclease-free
-water.</li>
+<li><strong>Sample Homogenization:</strong> Use appropriate homogenizers
+(bead mill, mortar and pestle, rotor-stator) based on tissue type.</li>
+<li><strong>RNase Control:</strong> Always use RNase-free reagents,
+tubes, and tips; treat surfaces with RNase decontamination agents.</li>
+<li><strong>Yield vs. Purity Balance:</strong> High yield may sometimes
+compromise purity. UV absorbance ratios (A260/280 and A260/230) can
+guide optimization.</li>
+<li><strong>Temperature Management:</strong> Perform steps on ice where
+possible to preserve RNA integrity.</li>
+<li><strong>Column-Based Kits vs. Organic Methods:</strong> Choose based
+on throughput, sensitivity, and desired purity. Column-based kits
+simplify workflow but may lower yield.</li>
 </ul>
 <hr />
 </div>
-</div>
-<div id="a-standard-ctab-based-plant-dna-extraction-protocol-example"
-class="section level3">
-<h3>4. A Standard CTAB-Based Plant DNA Extraction Protocol
-(Example)</h3>
-<p><strong>Materials:</strong> - CTAB buffer (2% CTAB, 100 mM Tris-HCl
-pH 8, 20 mM EDTA, 1.4 M NaCl) - β-mercaptoethanol (freshly added) -
-Chloroform:Isoamyl alcohol (24:1) - Isopropanol - Ethanol (70%)</p>
-<p><strong>Steps:</strong> 1. Grind ~100 mg fresh/frozen leaf in liquid
-nitrogen. 2. Add 700 µL prewarmed CTAB buffer + 1% β-mercaptoethanol. 3.
-Incubate at 65°C for 30 minutes. 4. Add equal volume of
-chloroform:isoamyl alcohol. Mix and centrifuge. 5. Transfer aqueous
-phase. Add 0.7 volume of cold isopropanol. 6. Incubate at -20°C for 1
-hour. Centrifuge and pellet DNA. 7. Wash pellet with 70% ethanol.
-Air-dry. 8. Resuspend in TE buffer or nuclease-free water.</p>
+<div id="rna-quality-assessment" class="section level3">
+<h3>RNA Quality Assessment</h3>
+<ul>
+<li><strong>Spectrophotometry:</strong> A260/A280 ratio ~2.0 indicates
+high purity RNA; A260/A230 &gt;1.8 preferred.</li>
+<li><strong>Electrophoresis:</strong> Clear 28S and 18S rRNA bands (with
+~2:1 intensity) indicate intact RNA.</li>
+<li><strong>Bioanalyzer/RNA Integrity Number (RIN):</strong> Gold
+standard for assessing RNA degradation.</li>
+</ul>
 <hr />
 </div>
 <div id="conclusion" class="section level3">
-<h3>5. Conclusion</h3>
-<p>DNA extraction protocols must be tailored to the sample type and
-purpose. Understanding the role of each reagent and the logic of
-extraction steps allows researchers to troubleshoot and optimize for
-high-quality, inhibitor-free DNA. Advances in automation, magnetic bead
-purification, and microfluidics continue to evolve this foundati</p>
+<h3>Conclusion</h3>
+<p>Effective RNA extraction is both a science and an art—it requires an
+understanding of molecular stability, reagent interactions, and
+sample-specific characteristics. Mastery of RNA extraction underpins
+high-fidelity transcriptomic analyses and ensures the accuracy of
+downstream biological interpretations.</p>
 </div>
 
 

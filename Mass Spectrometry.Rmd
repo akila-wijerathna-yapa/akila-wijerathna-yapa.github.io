@@ -1,0 +1,103 @@
+---
+title: "Mass Spectrometry"
+output: html_document
+---
+
+## Introduction
+
+Mass spectrometry (MS) is a cornerstone analytical technique for identifying and quantifying molecules based on their mass-to-charge (m/z) ratio. In omics sciences—proteomics, metabolomics, lipidomics, and peptidomics—MS offers unparalleled sensitivity, specificity, and throughput. Modern mass spectrometers integrate multiple functional modules, each contributing to the accurate detection and characterization of analytes in complex biological matrices.
+
+### 1. **Sample Introduction System**
+
+The sample introduction system ensures efficient delivery of analytes into the ion source, typically preceded by chromatographic separation. **Liquid chromatography (LC)** is commonly used in conjunction with MS for biological samples due to its compatibility with polar and thermally labile compounds. This separation step reduces sample complexity and enhances ionization by minimizing ion suppression and resolving co-eluting species temporally. For volatile or thermally stable analytes, **gas chromatography (GC)** provides an alternative, often coupled with electron ionization.
+
+### 2. **Ion Source**
+
+The ion source plays a pivotal role in converting neutral molecules into gas-phase ions, a prerequisite for MS detection:
+
+- **Electrospray Ionization (ESI):** A soft ionization technique ideal for large, polar biomolecules such as peptides and proteins. ESI operates by applying high voltage to a liquid stream, generating charged droplets that release ions into the gas phase via desolvation. Its compatibility with LC makes it the most widely used ionization method in life sciences.
+  
+- **Matrix-Assisted Laser Desorption/Ionization (MALDI):** Suitable for intact proteins, peptides, lipids, and glycans. Samples are co-crystallized with a matrix compound that absorbs laser energy, facilitating ionization with minimal fragmentation. MALDI is integral to imaging MS and high-throughput screening applications.
+
+### 3. **Mass Analyzer**
+
+The mass analyzer separates ions according to their m/z ratio, directly influencing the resolution, accuracy, and speed of the MS instrument:
+
+- **Quadrupole:** Employs oscillating electric fields to selectively filter ions. Frequently used in tandem MS for targeted quantification using multiple reaction monitoring (MRM).
+- **Time-of-Flight (TOF):** Measures the flight time of ions over a fixed distance. Offers fast scanning and high resolution, commonly paired with MALDI and ESI.
+- **Orbitrap:** Traps ions in an electrostatic field and determines m/z from ion oscillation frequencies. Provides ultra-high resolution (≥100,000) and mass accuracy (<2 ppm), suitable for complex omics datasets.
+- **Ion Trap:** Captures ions in a confined electric field and ejects them sequentially. Particularly useful for MSⁿ analyses and structural elucidation.
+- **Fourier Transform Ion Cyclotron Resonance (FT-ICR):** Utilizes a strong magnetic field to measure ion cyclotron resonance, delivering unmatched resolution and accuracy, but at high operational cost.
+
+### 4. **Collision Cell (for Tandem MS/MS)**
+
+A defining feature of tandem MS is the ability to fragment selected precursor ions. In the **collision cell**, inert gases like nitrogen or argon induce collision-induced dissociation (CID), generating fragment ions that reveal structural and sequence information. This is fundamental to workflows like **data-dependent acquisition (DDA)** and **data-independent acquisition (DIA)**, enabling peptide sequencing and metabolite identification.
+
+### 5. **Detector**
+
+Detectors measure the abundance of ions, converting their impacts into an electrical signal. **Electron multipliers** and **microchannel plates** are commonly employed for their high sensitivity and dynamic range. Accurate ion detection ensures reliable quantification, especially for low-abundance species in complex biological samples.
+
+### 6. **Data System**
+
+Integrated software controls instrument operation, acquisition protocols, and initial data processing. Advanced platforms facilitate real-time spectral visualization, retention time alignment, quality assurance, and downstream bioinformatics analysis. Proprietary and open-source tools increasingly support reproducible and high-throughput omics workflows.
+
+## Applications in Omics
+
+Mass spectrometry underpins multiple layers of biological inquiry. It enables high-throughput, quantitative, and high-resolution profiling of biological molecules, transforming systems biology and personalized medicine.
+
+### Proteomics
+
+MS-based proteomics enables both discovery and hypothesis-driven investigations of the proteome. It supports **label-free quantification (LFQ)**, **isobaric labeling (e.g., TMT, iTRAQ)**, and **targeted assays (PRM/MRM)**. Common acquisition modes include:
+
+- **DDA**: Selects the most intense precursor ions for MS/MS fragmentation.
+- **DIA**: Fragments all precursors within defined m/z windows, enabling reproducible and comprehensive proteome coverage.
+- **PRM/MRM**: Facilitates absolute quantification of targeted peptides using known transitions.
+
+Proteomics is pivotal in biomarker discovery, signaling pathway analysis, and characterization of post-translational modifications (PTMs).
+
+### Metabolomics
+
+Metabolomics captures the downstream phenotype of cellular processes through small molecule profiling. LC-MS excels in analyzing polar metabolites, while GC-MS is used for volatile or derivatized compounds. Two key approaches are:
+
+- **Untargeted Metabolomics:** Broad, unbiased profiling of metabolites, useful in hypothesis generation and biomarker discovery.
+- **Targeted Metabolomics:** Focused analysis of predefined metabolites using authentic standards and calibration curves.
+
+MS metabolomics is instrumental in disease diagnostics, nutritional studies, and drug metabolism research.
+
+### Lipidomics
+
+Lipidomics characterizes the structure, quantity, and biological role of lipids. Lipid species are resolved based on acyl chain length, degree of unsaturation, and head group composition using high-resolution MS. Tandem MS elucidates fatty acyl chains through characteristic fragment ions. Applications span:
+
+- Membrane dynamics and signaling
+- Metabolic disorders such as obesity and diabetes
+- Inflammatory and neurodegenerative diseases
+
+### Peptidomics
+
+Peptidomics focuses on the **endogenous peptide repertoire**, bypassing enzymatic digestion. These low molecular weight peptides include hormones, cytokines, and antimicrobial peptides. MS enables:
+
+- Direct sequencing and quantification using high-resolution DDA/DIA workflows
+- **De novo sequencing** for unknown peptides
+- Spectral library searching for rapid annotation
+
+Peptidomics reveals regulatory mechanisms in physiology and disease, especially in neurobiology and immunology.
+
+## Teaching Objectives
+
+This educational module aims to build foundational and applied competencies in MS-based omics. Upon completion, learners will be able to:
+
+- Identify and describe the key components of modern mass spectrometers.
+- Differentiate between ionization techniques and mass analyzers.
+- Select appropriate MS-based strategies for proteomics, metabolomics, lipidomics, and peptidomics studies.
+- Conduct basic bioinformatics analysis using standard pipelines.
+- Evaluate experimental design principles, including replication, internal standards, and batch effect mitigation.
+- Recognize sources of technical variability and apply quality control measures to ensure data integrity.
+
+## Further Resources
+
+- [**DIA-NN** – Deep learning-based DIA analysis](https://diann.readthedocs.io)
+- [**MS-DIAL** – Comprehensive tool for metabolomics and lipidomics](http://prime.psc.riken.jp/compms/msdial/main.html)
+- [**MaxQuant & Perseus** – Quantitative proteomics & statistical analysis](https://www.maxquant.org)
+- [**Skyline** – Targeted MS workflows and spectral libraries](https://skyline.ms)
+- [**GNPS** – Global natural product social molecular networking](https://gnps.ucsd.edu)
+

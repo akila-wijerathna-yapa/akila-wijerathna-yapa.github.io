@@ -6,14 +6,15 @@ title: "Selected Publications"
 
 **Publications under review**
 
--	**_Wijerathna-Yapa, A._**, Isaac, K.S., Combe, M., Hume, S., and Sokolenko, S. (2025). Re-imagining Human Cell Culture Media: Challenges, Innovations, and Future Directions. Biotechnology Advances (JBA-D-24-01213)
+-	**_Wijerathna-Yapa, A._**, Hiti-Bandaralage, J., and Pathirana, R. (2025). Combe Harnessing Metabolites from Plant Cell and Tissue Culture for Sustainable Biotechnology (in prep).
+-	**_Wijerathna-Yapa, A._**, and Hasitha Premathilake. (2025). Mass Spectrometry-Based Multi-Omics for Extracellular Vesicles/Exosomes in Biotechnological Applications (in prep).
 -	Isaac, K.S., Leb, P. M., Street, T., **_Wijerathna-Yapa, A._**, and Sokolenko, S. (2025). Advancing Quantitative NMR for High-Precision Isotopic Analysis with rnmrfit 2.0. Analytical Chemistry.
-
 
 **Peer-reviewed Scientific Journal Articles**
 
 _**Biochemistry and Omics**_
 
+-	**_Wijerathna-Yapa, A._**, Isaac, K.S., Combe, M., Hume, S., and Sokolenko, S. (2025). Re-imagining Human Cell Culture Media: Challenges, Innovations, and Future Directions. Biotechnology Advances, https://doi.org/10.1016/j.biotechadv.2025.108564.
 - Pri-Tal, O., Sun, Y., Dadras, A., Fürst-Jansen, J.M.R., Zimran, G., Michaeli, D., **_Wijerathna-Yapa, A._**, Shpilman, M., Merilo, E., Yarmolinsky, D., Efroni, I., de Vries, J., Kollist, H. and Mosquna, A. (2024), Constitutive activation of ABA receptors in Arabidopsis reveals unique regulatory circuitries. New Phytol, 241: 703-714. https://doi.org/10.1111/nph.19363.
 - Li, L., Lee, C. P., Ding, X., Qin, Y., **_Wijerathna-Yapa, A._**, Broda, M., Otegui, M. S., Ganguly, D.R., Pogson, B.J., and Millar. H. (2022). Defects in autophagy lead to selective in vivo changes in turnover of cytosolic and organelle proteins in roots and shoots of Arabidopsis. The Plant Cell, koac185, https://doi.org/10.1093/plcell/koac185
 - Li, L., Duncan, O., Ganguly, D.R., Lee, C.P., Crisp, P., **_Wijerathna-Yapa, A._**, Pogson, B.J., Salih, K., - Trosch, J., Millar, A.H., and Pogson, B.J. (2022). Metabolic enzymes degraded under high light stress - maintain their proteostasis by coupled transcriptional regulation in Arabidopsis. Proceedings of the National Academy of Sciences 119(20) e2121362119.doi: https://doi.org/10.1073/pnas.2121362119

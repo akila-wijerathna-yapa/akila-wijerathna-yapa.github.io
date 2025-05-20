@@ -13,7 +13,7 @@
 
 <title>Bayliss Data Bazaar</title>
 
-<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
@@ -57,6 +57,7 @@ if (window.hljs) {
 
 
 
+
 <link rel="stylesheet" href="style.css" type="text/css" />
 
 
@@ -81,6 +82,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -138,11 +142,15 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.tab('show');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -171,8 +179,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -180,16 +188,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -233,7 +234,7 @@ $(document).ready(function () {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -255,7 +256,7 @@ $(document).ready(function () {
   <a href="Symposia-and-Workshops.html">Symposia &amp; Workshops</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Teaching Courses &amp; Workshops
      
     <span class="caret"></span>
@@ -265,24 +266,30 @@ $(document).ready(function () {
       <a href="Bayliss-Data-Bazaar.html">Bayliss Data Bazaar</a>
     </li>
     <li>
-      <a href="Plant Biotechnology.html">Plant Biotechnology</a>
+      <a href="Mass-Spectrometry.html">Mass Spectrometry</a>
     </li>
     <li>
-      <a href="Plant-Tissue-Culture.html">Plant Tissue Culture</a>
+      <a href="Spectroscopy-for-Life-Sceinces.html">Spectroscopy for Life Sceinces</a>
     </li>
     <li>
-      <a href="Plant-Molecular-Biology.html">Plant Molecular Biology</a>
+      <a href="Nuclear-Magnetic-Resonance-(NMR)-Spectroscopy.html">Nuclear Magnetic Resonance (NMR) Spectroscopy</a>
     </li>
     <li>
-      <a href="Plant-Molecular-Physiology.html">Plant Molecular Physiology</a>
+      <a href="Electron-Paramagnetic-Resonance-(EPR)-Spectroscopy.html">Electron Paramagnetic Resonance (EPR) Spectroscopy</a>
     </li>
     <li>
-      <a href="Controlled-Environment-Agriculture.html">Controlled Environment Agriculture (CEA)</a>
+      <a href="Molecular-Cloning.html">Molecular Cloning</a>
+    </li>
+    <li>
+      <a href="Cell-Culture.html">Cell Culture</a>
+    </li>
+    <li>
+      <a href="Spatial-omics.html">Spatial omics</a>
     </li>
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Laboratory Protocols
      
     <span class="caret"></span>
@@ -327,41 +334,110 @@ $(document).ready(function () {
 
 <div id="bayliss-data-bazaar-2020" class="section level1">
 <h1>Bayliss Data Bazaar 2020</h1>
-<div id="introduction-to-data-management-and-processing" class="section level2">
+<div id="introduction-to-data-management-and-processing"
+class="section level2">
 <h2>Introduction to Data Management and Processing</h2>
-<p><strong>Main Organizer:</strong> Dr. Akila Wijerathna-Yapa | <a href="mailto:akila.yapa@research.uwa.edu.au" class="email">akila.yapa@research.uwa.edu.au</a> | <em>Office Hours:</em> Wednesdays 2:00 pm - 3:00 pm @ School of Molecular Sciences; Room 4.16 or by appointment</p>
-<p><strong>Co-Organizer:</strong> Prof. Valerie Verhasselt | <a href="mailto:valerie.verhasselt@uwa.edu.au" class="email">valerie.verhasselt@uwa.edu.au</a> | <em>Office Hours:</em> by appointment</p>
+<p><strong>Main Organizer:</strong> Dr. Akila Wijerathna-Yapa | <a
+href="mailto:akila.yapa@research.uwa.edu.au"
+class="email">akila.yapa@research.uwa.edu.au</a> | <em>Office
+Hours:</em> Wednesdays 2:00 pm - 3:00 pm @ School of Molecular Sciences;
+Room 4.16 or by appointment</p>
+<p><strong>Co-Organizer:</strong> Prof. Valerie Verhasselt | <a
+href="mailto:valerie.verhasselt@uwa.edu.au"
+class="email">valerie.verhasselt@uwa.edu.au</a> | <em>Office Hours:</em>
+by appointment</p>
 </div>
 <div id="overview" class="section level2">
 <h2>Overview</h2>
-<p>This workshop will familiarise you with the basics of R through the RStudio interface and the tidyverse suite of R packages. You will be introduced to modern approaches to data analysis and visualization. The focus is on mastering basic skills and showing you where to go for help so you can undertake future analyses independently. By the end of this workshop you will know how to create and organize new “projects” in RStudio; read in data files; visualize data using the popular ggplot2 package; perform various data manipulation, summarization and modelling tasks; and create reproducible reports for bioinformatics analysis pipelines.Further, this course discusses the practical issues and techniques for data importing, tidying, transforming, and modeling. It offers a gentle introduction to techniques for processing big data. Programming is a cross-cutting aspect of the course. Participants will gain experience with data science tools through short assignments. The course work includes a term project based on real-world data. Required topics include: Data management and processing: definition &amp; background; Data transformation; Data import; Data cleaning; Data modeling; Relational and analytic databases; Basics of Excel; Programming in R; Data processing pipelines, connecting multiple data management and analysis components; Interaction between the capabilities and requirements of data analysis methods (data structures, basic statistics) and the choice of data storage and management tools; Repeatable and reproducible data analysis.</p>
-<p>Most bioinformatics tools are designed to be run from the command line hence the ability to run simple command line programs is an essential bioinformatics skill. This workshop will familiarise you with the basics of the Unix command line interface. We will show you how to navigate the file structure, run simple programs with arguments and open files. To keep it relevant to bioinformatics, we will demonstrate the samtools program and learn how to peer inside some common bioinformatic file formars (e.g. BAM file and fastq files)</p>
-<p>In this course, we will introduce you to the different types of scientific articles and provide an outline of how to write an original research article describing your original scientific research.To enable you to write scientific research articles that can be published and to equip them with skills to cite and manage references/ bibliography while writing using a reference management tool such as EndNote.</p>
+<p>This workshop will familiarise you with the basics of R through the
+RStudio interface and the tidyverse suite of R packages. You will be
+introduced to modern approaches to data analysis and visualization. The
+focus is on mastering basic skills and showing you where to go for help
+so you can undertake future analyses independently. By the end of this
+workshop you will know how to create and organize new “projects” in
+RStudio; read in data files; visualize data using the popular ggplot2
+package; perform various data manipulation, summarization and modelling
+tasks; and create reproducible reports for bioinformatics analysis
+pipelines.Further, this course discusses the practical issues and
+techniques for data importing, tidying, transforming, and modeling. It
+offers a gentle introduction to techniques for processing big data.
+Programming is a cross-cutting aspect of the course. Participants will
+gain experience with data science tools through short assignments. The
+course work includes a term project based on real-world data. Required
+topics include: Data management and processing: definition &amp;
+background; Data transformation; Data import; Data cleaning; Data
+modeling; Relational and analytic databases; Basics of Excel;
+Programming in R; Data processing pipelines, connecting multiple data
+management and analysis components; Interaction between the capabilities
+and requirements of data analysis methods (data structures, basic
+statistics) and the choice of data storage and management tools;
+Repeatable and reproducible data analysis.</p>
+<p>Most bioinformatics tools are designed to be run from the command
+line hence the ability to run simple command line programs is an
+essential bioinformatics skill. This workshop will familiarise you with
+the basics of the Unix command line interface. We will show you how to
+navigate the file structure, run simple programs with arguments and open
+files. To keep it relevant to bioinformatics, we will demonstrate the
+samtools program and learn how to peer inside some common bioinformatic
+file formars (e.g. BAM file and fastq files)</p>
+<p>In this course, we will introduce you to the different types of
+scientific articles and provide an outline of how to write an original
+research article describing your original scientific research.To enable
+you to write scientific research articles that can be published and to
+equip them with skills to cite and manage references/ bibliography while
+writing using a reference management tool such as EndNote.</p>
 </div>
 <div id="course-material-and-schedule" class="section level2">
 <h2>Course Material and Schedule</h2>
-<p><strong>Course Material</strong> <a href="https://docs.google.com/document/d/1EdbrjD-_NtXWf_3XkClu75dB_qhUQWmbxrD9-IgBNlM/edit#">Bayliss Data Bazaar Instructions Manual</a></p>
+<p><strong>Course Material</strong> <a
+href="https://docs.google.com/document/d/1EdbrjD-_NtXWf_3XkClu75dB_qhUQWmbxrD9-IgBNlM/edit#">Bayliss
+Data Bazaar Instructions Manual</a></p>
 <p><strong>Schedule:</strong> 8.00 am - 5:00 pm</p>
-<p><strong>Location:</strong> 373 Economics &amp; commerce conference room, PHYS: [ 215] Lecture Room</p>
+<p><strong>Location:</strong> 373 Economics &amp; commerce conference
+room, PHYS: [ 215] Lecture Room</p>
 <p><strong>Dates:</strong> 28th - 30th August 2020</p>
 </div>
 <div id="teaching-team" class="section level2">
 <h2>Teaching team</h2>
-<p><strong>TA: Assoc.Prof. Josh Mylne</strong> | <a href="mailto:joshua.mylne@uwa.edu.au" class="email">joshua.mylne@uwa.edu.au</a></p>
-<p><strong>TA: Dr. Jakob Petereit</strong> | <a href="mailto:jakob.petereit@research.uwa.edu.au" class="email">jakob.petereit@research.uwa.edu.au</a></p>
-<p><strong>TA: Dr. Brady Johnston</strong> | <a href="mailto:brady.johnston@research.uwa.edu.au" class="email">brady.johnston@research.uwa.edu.au</a></p>
-<p><strong>TA: Dr. Patricia Macchiaverni</strong> | <a href="mailto:patricia.macchiaverni@uwa.edu.au" class="email">patricia.macchiaverni@uwa.edu.au</a></p>
-<p><strong>TA: Farley Kwok van der Giezen</strong> | <a href="mailto:farley.kwokvandergiezen@research.uwa.edu.au" class="email">farley.kwokvandergiezen@research.uwa.edu.au</a></p>
-<p><strong>TA: Dr. Saskia Freytag</strong> | <a href="mailto:saskia.freytag@perkins.uwa.edu.au" class="email">saskia.freytag@perkins.uwa.edu.au</a></p>
-<p><strong>TA: Dr. Joanne Edmondston</strong> | <a href="mailto:joanne.edmondston@uwa.edu.au" class="email">joanne.edmondston@uwa.edu.au</a></p>
-<p><strong>TA: Dr.James Lloyd</strong> | <a href="mailto:james.lloyd@uwa.edu.au" class="email">james.lloyd@uwa.edu.au</a></p>
-<p><strong>TA: Dr. Dulce Vargas Landin</strong> | <a href="mailto:dulce.vargaslandin@research.uwa.edu.au" class="email">dulce.vargaslandin@research.uwa.edu.au</a></p>
-<p><strong>TA: Kylie Black</strong> | <a href="mailto:kylie.black@uwa.edu.au" class="email">kylie.black@uwa.edu.au</a></p>
+<p><strong>TA: Assoc.Prof. Josh Mylne</strong> | <a
+href="mailto:joshua.mylne@uwa.edu.au"
+class="email">joshua.mylne@uwa.edu.au</a></p>
+<p><strong>TA: Dr. Jakob Petereit</strong> | <a
+href="mailto:jakob.petereit@research.uwa.edu.au"
+class="email">jakob.petereit@research.uwa.edu.au</a></p>
+<p><strong>TA: Dr. Brady Johnston</strong> | <a
+href="mailto:brady.johnston@research.uwa.edu.au"
+class="email">brady.johnston@research.uwa.edu.au</a></p>
+<p><strong>TA: Dr. Patricia Macchiaverni</strong> | <a
+href="mailto:patricia.macchiaverni@uwa.edu.au"
+class="email">patricia.macchiaverni@uwa.edu.au</a></p>
+<p><strong>TA: Farley Kwok van der Giezen</strong> | <a
+href="mailto:farley.kwokvandergiezen@research.uwa.edu.au"
+class="email">farley.kwokvandergiezen@research.uwa.edu.au</a></p>
+<p><strong>TA: Dr. Saskia Freytag</strong> | <a
+href="mailto:saskia.freytag@perkins.uwa.edu.au"
+class="email">saskia.freytag@perkins.uwa.edu.au</a></p>
+<p><strong>TA: Dr. Joanne Edmondston</strong> | <a
+href="mailto:joanne.edmondston@uwa.edu.au"
+class="email">joanne.edmondston@uwa.edu.au</a></p>
+<p><strong>TA: Dr.James Lloyd</strong> | <a
+href="mailto:james.lloyd@uwa.edu.au"
+class="email">james.lloyd@uwa.edu.au</a></p>
+<p><strong>TA: Dr. Dulce Vargas Landin</strong> | <a
+href="mailto:dulce.vargaslandin@research.uwa.edu.au"
+class="email">dulce.vargaslandin@research.uwa.edu.au</a></p>
+<p><strong>TA: Kylie Black</strong> | <a
+href="mailto:kylie.black@uwa.edu.au"
+class="email">kylie.black@uwa.edu.au</a></p>
 <p><strong>Required Textbooks:</strong></p>
-<p><a href="http://r4ds.had.co.nz/"><strong>R for Data Science</strong></a> by Hadley Wickham and Garrett Grolemund</p>
-<p><a href="https://www.tidytextmining.com"><strong>Text Mining with R</strong></a> by Silge and Robinson</p>
-<p><a href="http://adv-r.had.co.nz/"><strong>Advanced R</strong></a> by Hadley Wickham</p>
-<p><a href="http://r-pkgs.had.co.nz"><strong>R Packages</strong></a> by Hadley Wickham</p>
+<p><a href="http://r4ds.had.co.nz/"><strong>R for Data
+Science</strong></a> by Hadley Wickham and Garrett Grolemund</p>
+<p><a href="https://www.tidytextmining.com"><strong>Text Mining with
+R</strong></a> by Silge and Robinson</p>
+<p><a href="http://adv-r.had.co.nz/"><strong>Advanced R</strong></a> by
+Hadley Wickham</p>
+<p><a href="http://r-pkgs.had.co.nz"><strong>R Packages</strong></a> by
+Hadley Wickham</p>
 </div>
 <div id="timetable" class="section level2">
 <h2>Timetable</h2>

@@ -1,0 +1,69 @@
+---
+title: "Electron Paramagnetic Resonance (EPR) Spectroscopy"
+---
+
+Electron Paramagnetic Resonance (EPR), also known as Electron Spin Resonance (ESR), is a spectroscopic technique used to detect and characterize chemical species with unpaired electrons. This includes organic radicals, transition metal complexes, and paramagnetic centers in biomolecules. In the life sciences, EPR is particularly valuable for studying oxidative stress, metalloproteins, radical-based enzyme mechanisms, and membrane dynamics.
+
+---
+
+### Basic Structure and Setup for Life Science Research
+
+An EPR spectrometer shares some similarities with NMR but is tailored for detecting electron spins rather than nuclear spins. The key components include:
+
+#### 1. **Magnet**
+- Provides a static magnetic field (B₀), typically variable up to 1.5 Tesla.
+- Field homogeneity and precision are crucial for high-resolution spectra.
+
+#### 2. **Microwave Bridge**
+- Replaces the RF transmitter in NMR.
+- Generates and delivers microwave radiation (typically 9–10 GHz in X-band EPR).
+- Detects microwave absorption during spin transitions.
+
+#### 3. **Resonator/Cavity**
+- Holds the sample and ensures efficient coupling between the microwave field and the unpaired electrons.
+- Specialized cavities allow for temperature control and modulation.
+
+#### 4. **Modulation Coils**
+- Apply a low-frequency magnetic field modulation to improve signal detection using phase-sensitive detection (lock-in amplification).
+
+#### 5. **Sample Tube**
+- Usually a quartz tube containing a frozen or solution sample with paramagnetic species.
+- Typical sample volume is 50–100 µL.
+
+#### 6. **Control Console and Software**
+- Controls magnetic field sweep, microwave frequency, and modulation.
+- Records and processes the derivative spectrum of microwave absorption.
+
+---
+
+### How EPR Works
+
+The EPR effect arises from the interaction between unpaired electron spins and an applied magnetic field.
+
+#### Step 1: **Zeeman Splitting**
+- In the absence of a magnetic field, electron spins are degenerate.
+- When a magnetic field is applied, electron spin states split into two energy levels based on spin orientation (ms = +½ and -½).
+- The energy gap is proportional to the magnetic field: ΔE = gμBB₀ (where g is the g-factor, μB is the Bohr magneton).
+
+#### Step 2: **Microwave Excitation**
+- When the energy of the microwave radiation matches the energy gap between spin states, electrons absorb energy and transition to the higher energy state.
+- This absorption is detected as the EPR signal.
+
+#### Step 3: **Detection and Derivative Spectrum**
+- Instead of direct absorption, EPR typically detects the **first derivative** of the absorption curve to improve signal-to-noise ratio.
+- The resulting spectrum provides information on g-values, hyperfine interactions, and relaxation properties.
+
+---
+
+### Applications in Life Sciences
+
+- **Free Radical Detection:** Quantification and characterization of reactive oxygen and nitrogen species (ROS/RNS) in oxidative stress and inflammation.
+- **Metalloproteins:** Characterization of Fe, Mn, Cu, and other metal centers in enzymes such as cytochrome P450, SOD, and nitrogenase.
+- **Spin Labeling:** Use of nitroxide radicals or site-directed spin labels (SDSL) to study protein folding, membrane dynamics, and molecular distances (DEER spectroscopy).
+- **Photosynthesis Research:** Study of paramagnetic intermediates in electron transport chains (e.g., iron-sulfur clusters, plastosemiquinone).
+
+---
+
+### Conclusion
+
+EPR spectroscopy offers unparalleled sensitivity to unpaired electrons, making it a powerful tool for probing the electronic environment and dynamics of biomolecules. In life science research, EPR bridges structural, mechanistic, and functional insights into systems where electron transfer, redox activity, or paramagnetic cofactors play a central role.

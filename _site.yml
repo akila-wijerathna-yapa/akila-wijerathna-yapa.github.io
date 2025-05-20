@@ -27,7 +27,9 @@ navbar:
         - text: Molecular Cloning
           href: Molecular-Cloning.html
         - text: Cell Culture
-          href: Cell-Culture.html         
+          href: Cell-Culture.html   
+        - text: Spatial omics
+          href: Spatial-omics.html
     - text: "Laboratory Protocols"
       menu:
         - text: DNA Extraction

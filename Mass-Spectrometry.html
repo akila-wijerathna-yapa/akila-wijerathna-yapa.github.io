@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Mass Spectrometry</title>
+
+<script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Akila Wijerathna-Yapa</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="research.html">Research</a>
+</li>
+<li>
+  <a href="publications.html">Publications</a>
+</li>
+<li>
+  <a href="Symposia-and-Workshops.html">Symposia &amp; Workshops</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Teaching Courses &amp; Workshops
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Bayliss-Data-Bazaar.html">Bayliss Data Bazaar</a>
+    </li>
+    <li>
+      <a href="Mass-Spectrometry.html">Mass Spectrometry</a>
+    </li>
+    <li>
+      <a href="Spectroscopy-for-Life-Sceinces.html">Spectroscopy for Life Sceinces</a>
+    </li>
+    <li>
+      <a href="Nuclear-Magnetic-Resonance-(NMR)-Spectroscopy.html">Nuclear Magnetic Resonance (NMR) Spectroscopy</a>
+    </li>
+    <li>
+      <a href="Electron-Paramagnetic-Resonance-(EPR)-Spectroscopy.html">Electron Paramagnetic Resonance (EPR) Spectroscopy</a>
+    </li>
+    <li>
+      <a href="Molecular-Cloning.html">Molecular Cloning</a>
+    </li>
+    <li>
+      <a href="Cell-Culture.html">Cell Culture</a>
+    </li>
+    <li>
+      <a href="Spatial-omics.html">Spatial omics</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Laboratory Protocols
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="DNA-Extraction.html">DNA Extraction</a>
+    </li>
+    <li>
+      <a href="RNA Extraction.html">RNA Extraction</a>
+    </li>
+    <li>
+      <a href="Protein-Extraction.html">Protein Extraction</a>
+    </li>
+    <li>
+      <a href="Yeast-Transformation.html">Yeast Transformation</a>
+    </li>
+    <li>
+      <a href="Yeast-Two-Hybrid.html">Yeast Two-Hybrid</a>
+    </li>
+    <li>
+      <a href="Homozygous Transgenic Selection.html">Homozygous Transgenic Selection</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Mass Spectrometry</h1>
+
+</div>
+
+
+<div id="introduction" class="section level2">
+<h2>Introduction</h2>
+<p>Mass spectrometry (MS) is a cornerstone analytical technique for
+identifying and quantifying molecules based on their mass-to-charge
+(m/z) ratio. In omics sciences—proteomics, metabolomics, lipidomics, and
+peptidomics—MS offers unparalleled sensitivity, specificity, and
+throughput. Modern mass spectrometers integrate multiple functional
+modules, each contributing to the accurate detection and
+characterization of analytes in complex biological matrices.</p>
+<div id="sample-introduction-system" class="section level3">
+<h3>1. <strong>Sample Introduction System</strong></h3>
+<p>The sample introduction system ensures efficient delivery of analytes
+into the ion source, typically preceded by chromatographic separation.
+<strong>Liquid chromatography (LC)</strong> is commonly used in
+conjunction with MS for biological samples due to its compatibility with
+polar and thermally labile compounds. This separation step reduces
+sample complexity and enhances ionization by minimizing ion suppression
+and resolving co-eluting species temporally. For volatile or thermally
+stable analytes, <strong>gas chromatography (GC)</strong> provides an
+alternative, often coupled with electron ionization.</p>
+</div>
+<div id="ion-source" class="section level3">
+<h3>2. <strong>Ion Source</strong></h3>
+<p>The ion source plays a pivotal role in converting neutral molecules
+into gas-phase ions, a prerequisite for MS detection:</p>
+<ul>
+<li><p><strong>Electrospray Ionization (ESI):</strong> A soft ionization
+technique ideal for large, polar biomolecules such as peptides and
+proteins. ESI operates by applying high voltage to a liquid stream,
+generating charged droplets that release ions into the gas phase via
+desolvation. Its compatibility with LC makes it the most widely used
+ionization method in life sciences.</p></li>
+<li><p><strong>Matrix-Assisted Laser Desorption/Ionization
+(MALDI):</strong> Suitable for intact proteins, peptides, lipids, and
+glycans. Samples are co-crystallized with a matrix compound that absorbs
+laser energy, facilitating ionization with minimal fragmentation. MALDI
+is integral to imaging MS and high-throughput screening
+applications.</p></li>
+</ul>
+</div>
+<div id="mass-analyzer" class="section level3">
+<h3>3. <strong>Mass Analyzer</strong></h3>
+<p>The mass analyzer separates ions according to their m/z ratio,
+directly influencing the resolution, accuracy, and speed of the MS
+instrument:</p>
+<ul>
+<li><strong>Quadrupole:</strong> Employs oscillating electric fields to
+selectively filter ions. Frequently used in tandem MS for targeted
+quantification using multiple reaction monitoring (MRM).</li>
+<li><strong>Time-of-Flight (TOF):</strong> Measures the flight time of
+ions over a fixed distance. Offers fast scanning and high resolution,
+commonly paired with MALDI and ESI.</li>
+<li><strong>Orbitrap:</strong> Traps ions in an electrostatic field and
+determines m/z from ion oscillation frequencies. Provides ultra-high
+resolution (≥100,000) and mass accuracy (&lt;2 ppm), suitable for
+complex omics datasets.</li>
+<li><strong>Ion Trap:</strong> Captures ions in a confined electric
+field and ejects them sequentially. Particularly useful for MSⁿ analyses
+and structural elucidation.</li>
+<li><strong>Fourier Transform Ion Cyclotron Resonance (FT-ICR):</strong>
+Utilizes a strong magnetic field to measure ion cyclotron resonance,
+delivering unmatched resolution and accuracy, but at high operational
+cost.</li>
+</ul>
+</div>
+<div id="collision-cell-for-tandem-msms" class="section level3">
+<h3>4. <strong>Collision Cell (for Tandem MS/MS)</strong></h3>
+<p>A defining feature of tandem MS is the ability to fragment selected
+precursor ions. In the <strong>collision cell</strong>, inert gases like
+nitrogen or argon induce collision-induced dissociation (CID),
+generating fragment ions that reveal structural and sequence
+information. This is fundamental to workflows like
+<strong>data-dependent acquisition (DDA)</strong> and
+<strong>data-independent acquisition (DIA)</strong>, enabling peptide
+sequencing and metabolite identification.</p>
+</div>
+<div id="detector" class="section level3">
+<h3>5. <strong>Detector</strong></h3>
+<p>Detectors measure the abundance of ions, converting their impacts
+into an electrical signal. <strong>Electron multipliers</strong> and
+<strong>microchannel plates</strong> are commonly employed for their
+high sensitivity and dynamic range. Accurate ion detection ensures
+reliable quantification, especially for low-abundance species in complex
+biological samples.</p>
+</div>
+<div id="data-system" class="section level3">
+<h3>6. <strong>Data System</strong></h3>
+<p>Integrated software controls instrument operation, acquisition
+protocols, and initial data processing. Advanced platforms facilitate
+real-time spectral visualization, retention time alignment, quality
+assurance, and downstream bioinformatics analysis. Proprietary and
+open-source tools increasingly support reproducible and high-throughput
+omics workflows.</p>
+</div>
+</div>
+<div id="applications-in-omics" class="section level2">
+<h2>Applications in Omics</h2>
+<p>Mass spectrometry underpins multiple layers of biological inquiry. It
+enables high-throughput, quantitative, and high-resolution profiling of
+biological molecules, transforming systems biology and personalized
+medicine.</p>
+<div id="proteomics" class="section level3">
+<h3>Proteomics</h3>
+<p>MS-based proteomics enables both discovery and hypothesis-driven
+investigations of the proteome. It supports <strong>label-free
+quantification (LFQ)</strong>, <strong>isobaric labeling (e.g., TMT,
+iTRAQ)</strong>, and <strong>targeted assays (PRM/MRM)</strong>. Common
+acquisition modes include:</p>
+<ul>
+<li><strong>DDA</strong>: Selects the most intense precursor ions for
+MS/MS fragmentation.</li>
+<li><strong>DIA</strong>: Fragments all precursors within defined m/z
+windows, enabling reproducible and comprehensive proteome coverage.</li>
+<li><strong>PRM/MRM</strong>: Facilitates absolute quantification of
+targeted peptides using known transitions.</li>
+</ul>
+<p>Proteomics is pivotal in biomarker discovery, signaling pathway
+analysis, and characterization of post-translational modifications
+(PTMs).</p>
+</div>
+<div id="metabolomics" class="section level3">
+<h3>Metabolomics</h3>
+<p>Metabolomics captures the downstream phenotype of cellular processes
+through small molecule profiling. LC-MS excels in analyzing polar
+metabolites, while GC-MS is used for volatile or derivatized compounds.
+Two key approaches are:</p>
+<ul>
+<li><strong>Untargeted Metabolomics:</strong> Broad, unbiased profiling
+of metabolites, useful in hypothesis generation and biomarker
+discovery.</li>
+<li><strong>Targeted Metabolomics:</strong> Focused analysis of
+predefined metabolites using authentic standards and calibration
+curves.</li>
+</ul>
+<p>MS metabolomics is instrumental in disease diagnostics, nutritional
+studies, and drug metabolism research.</p>
+</div>
+<div id="lipidomics" class="section level3">
+<h3>Lipidomics</h3>
+<p>Lipidomics characterizes the structure, quantity, and biological role
+of lipids. Lipid species are resolved based on acyl chain length, degree
+of unsaturation, and head group composition using high-resolution MS.
+Tandem MS elucidates fatty acyl chains through characteristic fragment
+ions. Applications span:</p>
+<ul>
+<li>Membrane dynamics and signaling</li>
+<li>Metabolic disorders such as obesity and diabetes</li>
+<li>Inflammatory and neurodegenerative diseases</li>
+</ul>
+</div>
+<div id="peptidomics" class="section level3">
+<h3>Peptidomics</h3>
+<p>Peptidomics focuses on the <strong>endogenous peptide
+repertoire</strong>, bypassing enzymatic digestion. These low molecular
+weight peptides include hormones, cytokines, and antimicrobial peptides.
+MS enables:</p>
+<ul>
+<li>Direct sequencing and quantification using high-resolution DDA/DIA
+workflows</li>
+<li><strong>De novo sequencing</strong> for unknown peptides</li>
+<li>Spectral library searching for rapid annotation</li>
+</ul>
+<p>Peptidomics reveals regulatory mechanisms in physiology and disease,
+especially in neurobiology and immunology.</p>
+</div>
+</div>
+<div id="teaching-objectives" class="section level2">
+<h2>Teaching Objectives</h2>
+<p>This educational module aims to build foundational and applied
+competencies in MS-based omics. Upon completion, learners will be able
+to:</p>
+<ul>
+<li>Identify and describe the key components of modern mass
+spectrometers.</li>
+<li>Differentiate between ionization techniques and mass analyzers.</li>
+<li>Select appropriate MS-based strategies for proteomics, metabolomics,
+lipidomics, and peptidomics studies.</li>
+<li>Conduct basic bioinformatics analysis using standard pipelines.</li>
+<li>Evaluate experimental design principles, including replication,
+internal standards, and batch effect mitigation.</li>
+<li>Recognize sources of technical variability and apply quality control
+measures to ensure data integrity.</li>
+</ul>
+</div>
+<div id="further-resources" class="section level2">
+<h2>Further Resources</h2>
+<ul>
+<li><a href="https://diann.readthedocs.io"><strong>DIA-NN</strong> –
+Deep learning-based DIA analysis</a></li>
+<li><a
+href="http://prime.psc.riken.jp/compms/msdial/main.html"><strong>MS-DIAL</strong>
+– Comprehensive tool for metabolomics and lipidomics</a></li>
+<li><a href="https://www.maxquant.org"><strong>MaxQuant &amp;
+Perseus</strong> – Quantitative proteomics &amp; statistical
+analysis</a></li>
+<li><a href="https://skyline.ms"><strong>Skyline</strong> – Targeted MS
+workflows and spectral libraries</a></li>
+<li><a href="https://gnps.ucsd.edu"><strong>GNPS</strong> – Global
+natural product social molecular networking</a></li>
+</ul>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

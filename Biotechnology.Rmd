@@ -4,22 +4,84 @@ title: "Biotechnology"
 
 ## Introduction to Biotechnology
 
-**Schedule:** Tuesdays 6:00 pm - 9:15 pm
+**Schedule:** Tuesdays 6:00 pm – 9:15 pm  
+**Location:** Zoom  
+**Dates:** Jan 19, 2021 – Apr 24, 2021  
 
-**Location:**  Zoom
+**Instructor:** [**Akila Wijerathna Yapa**](https://www.researchgate.net/profile/Akila-Wijerathna-Yapa)  
+*Virtual Office Hours:* Thursdays 3:00 pm – 4:00 pm @ Microsoft Teams or by appointment  
 
-**Dates:** Jan 19, 2021 - Apr 24, 2021
+---
 
-**Instructor:** [**Akila Wijerathna Yapa**](https://www.researchgate.net/profile/Akila-Wijerathna-Yapa) 
-*Virtual Office Hours:* Thursdays 3:00 pm - 4:00 pm @ Microsoft Teams or by appointment
+### Course Overview
 
-**TA:** **TBC** |
+This 5-day intensive course offers a foundational and applied exploration of **biotechnology**, focusing on key molecular tools, cellular systems, and industrial applications. The curriculum balances theory with real-world relevance to prepare students for research, translational, or commercial pursuits in modern biosciences. Each day builds conceptually on the last — progressing from molecular foundations to applied biomanufacturing and bioethics.
 
-*Virtual Office Hours:* 
+---
 
+### Day 1: Foundations of Biotechnology
 
-**Required Textbooks:**
+- History and evolution of biotechnology  
+- Overview of molecular biology: DNA, RNA, and protein synthesis  
+- Genetic engineering and recombinant DNA technology  
+- Restriction enzymes, cloning vectors, and ligation strategies  
+- PCR and gel electrophoresis: principles and applications  
 
+> *Outcome:* Students will understand the conceptual and technical groundwork of molecular biotechnology, including its origins and foundational methods.
 
+---
+
+### Day 2: Microbial and Plant Biotechnology
+
+- Bacterial expression systems and plasmid design  
+- CRISPR-Cas9 in microbial genomes  
+- Agrobacterium-mediated transformation  
+- Plant tissue culture techniques  
+- Secondary metabolites and biopharming  
+
+> *Outcome:* Students will grasp microbial and plant biotechnology platforms and their roles in agriculture and pharmaceuticals.
+
+---
+
+### Day 3: Animal Cell Culture and Therapeutics
+
+- Principles of mammalian cell culture  
+- Culture media, cell lines, and aseptic techniques  
+- Monoclonal antibody production (hybridoma technology)  
+- Bioreactor systems for therapeutic proteins  
+- Vaccine development platforms (e.g., viral vectors, mRNA)  
+
+> *Outcome:* Students will be able to describe the workflow and applications of animal cell culture in biomedical research and therapeutics.
+
+---
+
+### Day 4: Omics Technologies and Synthetic Biology
+
+- Introduction to genomics, transcriptomics, proteomics, and metabolomics  
+- DNA sequencing methods and data interpretation  
+- Synthetic biology and genetic circuits  
+- Applications in diagnostics, biosensors, and biomanufacturing  
+
+> *Outcome:* Students will explore high-throughput technologies enabling systems-level understanding and design of biological systems.
+
+---
+
+### Day 5: Ethics, Regulation, and Innovation in Biotechnology
+
+- Intellectual property (IP) in biotech: patents and licensing  
+- Regulatory bodies (e.g., FDA, EMA, TGA) and approval pipelines  
+- Bioethics: GMOs, gene editing, and human trials  
+- Commercialization of biotech innovation  
+- Entrepreneurship and career paths in biotechnology  
+
+> *Outcome:* Students will gain insights into the ethical, legal, and commercial dimensions that guide biotech development and deployment.
+
+---
+
+### Assessment and Participation
+
+This course emphasizes interactive learning through discussions, case studies, and virtual labs. Assignments will include reading reflections, group presentations, and a final quiz.
+
+**Learning Materials:** All readings, slides, and lab simulations will be made available via Moodle or email.
 
 

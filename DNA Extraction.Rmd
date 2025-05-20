@@ -2,32 +2,89 @@
 title: "DNA Extraction Protocols"
 ---
 
-### Rice DNA Extraction
+DNA extraction is a fundamental procedure in molecular biology, underpinning a vast array of downstream applications including PCR, sequencing, cloning, and genotyping. An effective DNA extraction protocol must efficiently lyse cells, protect nucleic acids from degradation, and purify DNA away from proteins, polysaccharides, and other contaminants.
 
-**DNA extraction buffer**
+This page outlines the logic behind DNA extraction, common reagents and their biochemical functions, and principles for optimizing protocols across various sample types.
 
-- KCL 7.45 g
-- 1 M tris-HCL pH 8.0 10.0 mL
-- 0.5M EDTA 2mL
-- Up to 100 mL distilled water
+---
 
-**Steps**
+### 1. Logic Behind DNA Extraction
 
-1.	Use 3 cm tender leaf piece (two-three weeks old leaves from germinated seedlings)
-2.	Grind leaf piece with 300 μL of DNA extraction buffer in a micro-centrifuge tube)
-3.	Incubate at 70 °C for 20 minutes.
-4.	Centrifuge the tube at 15000 rpm for 15 minutes.
-5.	Add 100μ1 of isopropanol into a new tube.
-6.	Then transfer the supernatant into the tube containing isopropanol and mix gently.
-7.	Keep the tube under 4°C for 15-30 minutes.
-8.	Centrifuge the tube at 1500 rpm for 15 min at 4°C.
-9.	Remove the supernatant. At this stage, DNA is precipitated.
-10.	Wash DNA pellet with 150μ1 of 70%, ice cold ethanol by centrifuging for 10 minutes at 15000 rpm and at 4°C.
-11.	Remove the supernatant and air dry in the dark for 2 hours
-12.	Dissolve in 300 μl of 1/10th TE buffer for 1 hour or overnight at 4°C.
-13.	Store DNA at 20°C (use 5 μl for 15 μI volume of PCR mixture)
+A successful DNA extraction protocol typically involves the following sequential steps:
 
-Tender leaves of rice plants at the vegetative phase were used to extract gDNA using previously reported methods. About two to three small leaves were cut into small pieces and inserted into 1.5 mL Eppendorf tube. The leaf pieces were homogenized using a micropipette tip with 300 μL of DNA extraction buffer (1M KCl, 1M Tris-HCl, pH 8.0, 0.5 M EDTA). Capped Eppendorf tube was incubated at 70 °C for 20 minutes. Extracts were centrifuged at 1500 rpm for 15 minutes at room temperature. The supernatant was transferred into a new Eppendorf tube, and 100 μL of ice-cold isopropanol was added to precipitate the DNA. After mixing gently, tubes were kept at 4 °C for overnight and centrifuged at 1500 rmp 4 °C for 15 minutes. After removing the supernatant, DNA pellets were washed with 150 μL of 70% ice-cold ethanol by centrifuging at 1500 rpm at 4 °C for 10 minutes. The supernatant was removed, and pellets were air dried in the dark for 2 hours. The pellets were dissolved in 150 μL of 1/10th TE buffer (10 mM Tris, 1 mM EDTA).
+1. **Cell lysis**: Disrupts cell membranes and releases intracellular components.
+2. **DNA stabilization**: Inhibits nucleases that degrade DNA.
+3. **Protein and contaminant removal**: Precipitates or separates proteins, lipids, and polysaccharides.
+4. **DNA precipitation or binding**: Concentrates and isolates DNA.
+5. **DNA wash and elution**: Removes residual contaminants and recovers purified DNA.
 
-### References
-The International Rice Genome Sequencing Project (IRGSR; http:rgp.dana.affrc.go.jp/rgp/protocols/QTL.pdf). Accessed on 07 Aug 2010.
+These steps can be adapted to suit the biological material (plant, animal, microbial, or environmental) and intended downstream application.
+
+---
+
+### 2. Chemicals Used and Their Functions
+
+| Reagent                    | Function                                                                 |
+|----------------------------|--------------------------------------------------------------------------|
+| **Tris-HCl**               | Buffers pH and maintains a stable environment for DNA integrity          |
+| **EDTA**                  | Chelates divalent cations (e.g., Mg²⁺), inhibiting DNases                 |
+| **SDS (Sodium dodecyl sulfate)** | Disrupts lipid membranes and denatures proteins                         |
+| **CTAB (cetyltrimethylammonium bromide)** | Binds polysaccharides and removes complex carbohydrates (plant DNA)     |
+| **Proteinase K**          | Degrades proteins, including histones and nucleases                      |
+| **Phenol-chloroform**     | Separates proteins from nucleic acids via phase separation              |
+| **Isopropanol or Ethanol**| Precipitates DNA from aqueous solution                                  |
+| **NaCl or KCl**           | Enhances protein precipitation and stabilizes DNA structure              |
+| **RNase A**               | Degrades RNA to purify DNA preparations                                  |
+
+---
+
+### 3. Optimizing a DNA Extraction Protocol
+
+Optimizing DNA extraction requires balancing purity, yield, and integrity while minimizing cost and time. Consider the following:
+
+#### a) Sample-Specific Challenges
+- **Plants:** High levels of polysaccharides and polyphenols can inhibit downstream reactions. Use CTAB and PVP.
+- **Animal tissues:** Rich in proteins and lipids. Proteinase K and SDS are essential.
+- **Microbes:** Require mechanical lysis (bead beating) or lysozyme digestion.
+- **FFPE samples:** Require deparaffinization and prolonged proteinase digestion.
+
+#### b) DNA Quality Metrics
+- **A260/A280 ratio (~1.8):** Indicates protein contamination.
+- **A260/A230 ratio (>2.0):** Indicates salt or phenol contamination.
+- **Gel electrophoresis:** Assesses integrity and shearing.
+
+#### c) Inhibitor Removal
+- Use silica column purification or magnetic beads for clean-up.
+- Incorporate wash buffers with ethanol and Tris to remove carryover.
+
+#### d) Yield Maximization
+- Minimize sample loss during transfer steps.
+- Avoid over-drying DNA pellets.
+- Elute in low-salt buffer (e.g., 10 mM Tris, pH 8.0) or nuclease-free water.
+
+---
+
+### 4. A Standard CTAB-Based Plant DNA Extraction Protocol (Example)
+
+**Materials:**
+- CTAB buffer (2% CTAB, 100 mM Tris-HCl pH 8, 20 mM EDTA, 1.4 M NaCl)
+- β-mercaptoethanol (freshly added)
+- Chloroform:Isoamyl alcohol (24:1)
+- Isopropanol
+- Ethanol (70%)
+
+**Steps:**
+1. Grind ~100 mg fresh/frozen leaf in liquid nitrogen.
+2. Add 700 µL prewarmed CTAB buffer + 1% β-mercaptoethanol.
+3. Incubate at 65°C for 30 minutes.
+4. Add equal volume of chloroform:isoamyl alcohol. Mix and centrifuge.
+5. Transfer aqueous phase. Add 0.7 volume of cold isopropanol.
+6. Incubate at -20°C for 1 hour. Centrifuge and pellet DNA.
+7. Wash pellet with 70% ethanol. Air-dry.
+8. Resuspend in TE buffer or nuclease-free water.
+
+---
+
+### 5. Conclusion
+
+DNA extraction protocols must be tailored to the sample type and purpose. Understanding the role of each reagent and the logic of extraction steps allows researchers to troubleshoot and optimize for high-quality, inhibitor-free DNA. Advances in automation, magnetic bead purification, and microfluidics continue to evolve this foundati

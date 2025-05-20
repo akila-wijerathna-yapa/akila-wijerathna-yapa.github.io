@@ -1,0 +1,72 @@
+---
+title: "Nuclear Magnetic Resonance (NMR) Spectroscopy"
+---
+
+Nuclear Magnetic Resonance (NMR) spectroscopy is a powerful analytical technique widely used in life sciences to elucidate the structure, dynamics, and interactions of biomolecules in solution and solid states. Unlike crystallography or mass spectrometry, NMR provides atomic-level information in physiologically relevant conditions, making it indispensable in structural biology, metabolomics, and drug discovery.
+
+---
+
+### Basic Structure and Setup for Life Science Research
+
+A modern NMR spectrometer consists of several integrated components, each critical for high-resolution data acquisition:
+
+#### 1. **Superconducting Magnet**
+- The central component generating a strong, stable magnetic field (typically 400–1000 MHz).
+- Field strength is denoted by the resonance frequency of protons (^1H).
+- Maintained at cryogenic temperatures using liquid helium and nitrogen.
+
+#### 2. **Radiofrequency Transmitter and Receiver**
+- The transmitter delivers short pulses of radiofrequency (RF) energy to excite nuclear spins.
+- The receiver detects the emitted signal (Free Induction Decay, or FID) as nuclei relax to equilibrium.
+
+#### 3. **Probe Head**
+- The probe contains coils tuned to specific nuclei (^1H, ^13C, ^15N, etc.).
+- Positioned inside the magnet bore where the sample tube is inserted.
+- Advanced probes offer cryogenic cooling and pulsed field gradients for enhanced sensitivity.
+
+#### 4. **Sample Spinner and Temperature Control**
+- Ensures homogenous field exposure and stable sample conditions.
+- Typical sample format is a 5 mm NMR tube containing 0.5–1 mL of sample in deuterated solvent.
+
+#### 5. **Control Console and Software**
+- Orchestrates pulse sequences, acquisition parameters, and data processing.
+- Software platforms like TopSpin (Bruker) or VNMRJ (Agilent) enable interactive spectral analysis.
+
+---
+
+### How NMR Works
+
+The NMR phenomenon arises from the magnetic properties of atomic nuclei. Here's a simplified overview of the underlying principles:
+
+#### Step 1: **Alignment of Nuclear Spins**
+- Atomic nuclei with an odd number of protons or neutrons (e.g., ^1H, ^13C) possess a magnetic moment.
+- In a strong magnetic field (B₀), these nuclear spins align with or against the field, creating energy level splitting (Zeeman effect).
+
+#### Step 2: **RF Excitation**
+- A brief RF pulse is applied at the Larmor frequency, flipping spins into a higher energy state and tipping their net magnetization into the transverse plane.
+
+#### Step 3: **Relaxation and Signal Detection**
+- After the pulse, nuclei relax back to equilibrium:
+  - **T1 (spin-lattice) relaxation** describes recovery along B₀.
+  - **T2 (spin-spin) relaxation** describes dephasing in the transverse plane.
+- During relaxation, the decaying RF signal (FID) is detected and digitized.
+
+#### Step 4: **Fourier Transformation**
+- The FID is transformed into a frequency-domain spectrum.
+- Chemical shifts, splitting patterns (J-coupling), and peak intensities provide structural and quantitative information.
+
+---
+
+### Applications in Life Sciences
+
+- **Protein NMR:** Assigns backbone and side-chain resonances to solve 3D protein structures in solution.
+- **Metabolomics:** Identifies and quantifies metabolites in biofluids (e.g., serum, urine).
+- **Ligand Binding Studies:** Measures molecular interactions, binding kinetics, and affinities (e.g., STD-NMR, HSQC titrations).
+- **Drug Discovery:** Guides fragment-based lead identification and optimization.
+
+---
+
+### Conclusion
+
+NMR spectroscopy uniquely combines non-invasive analysis, atomic resolution, and rich dynamic information. Its versatility in studying biomolecules in native-like environments makes it an essential platform in modern life science research.
+

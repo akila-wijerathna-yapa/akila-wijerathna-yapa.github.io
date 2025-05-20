@@ -11,7 +11,7 @@
 
 
 
-<title>DNA Extraction Protocols</title>
+<title>Protein Extraction Protocols</title>
 
 <script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -327,167 +327,138 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">DNA Extraction Protocols</h1>
+<h1 class="title toc-ignore">Protein Extraction Protocols</h1>
 
 </div>
 
 
-<p>DNA extraction is a fundamental procedure in molecular biology,
-underpinning a vast array of downstream applications including PCR,
-sequencing, cloning, and genotyping. An effective DNA extraction
-protocol must efficiently lyse cells, protect nucleic acids from
-degradation, and purify DNA away from proteins, polysaccharides, and
-other contaminants.</p>
-<p>This page outlines the logic behind DNA extraction, common reagents
-and their biochemical functions, and principles for optimizing protocols
-across various sample types.</p>
+<p>Protein extraction is a fundamental technique in molecular and
+cellular biology used to isolate and solubilize proteins from various
+biological materials, including cells, tissues, and biofluids.
+High-quality protein preparations are essential for downstream
+applications such as SDS-PAGE, western blotting, ELISA, mass
+spectrometry, and enzyme activity assays.</p>
 <hr />
-<div id="logic-behind-dna-extraction" class="section level3">
-<h3>1. Logic Behind DNA Extraction</h3>
-<p>A successful DNA extraction protocol typically involves the following
-sequential steps:</p>
-<ol style="list-style-type: decimal">
-<li><strong>Cell lysis</strong>: Disrupts cell membranes and releases
-intracellular components.</li>
-<li><strong>DNA stabilization</strong>: Inhibits nucleases that degrade
-DNA.</li>
-<li><strong>Protein and contaminant removal</strong>: Precipitates or
-separates proteins, lipids, and polysaccharides.</li>
-<li><strong>DNA precipitation or binding</strong>: Concentrates and
-isolates DNA.</li>
-<li><strong>DNA wash and elution</strong>: Removes residual contaminants
-and recovers purified DNA.</li>
-</ol>
-<p>These steps can be adapted to suit the biological material (plant,
-animal, microbial, or environmental) and intended downstream
-application.</p>
+<div id="logic-of-protein-extraction" class="section level3">
+<h3>Logic of Protein Extraction</h3>
+<p>The primary goal of protein extraction is to efficiently disrupt
+cellular compartments and solubilize proteins while preserving their
+native structure and function (or denaturing them depending on the
+application). This requires a delicate balance of mechanical, chemical,
+and thermal treatments.</p>
 <hr />
 </div>
 <div id="chemicals-used-and-their-functions" class="section level3">
-<h3>2. Chemicals Used and Their Functions</h3>
+<h3>Chemicals Used and Their Functions</h3>
 <table>
 <colgroup>
-<col width="27%" />
-<col width="72%" />
+<col width="26%" />
+<col width="73%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th>Reagent</th>
+<th>Chemical/Reagent</th>
 <th>Function</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Tris-HCl</strong></td>
-<td>Buffers pH and maintains a stable environment for DNA integrity</td>
+<td><strong>Detergents (e.g., SDS, Triton X-100, NP-40)</strong></td>
+<td>Solubilize membranes and denature or preserve protein structure</td>
 </tr>
 <tr class="even">
-<td><strong>EDTA</strong></td>
-<td>Chelates divalent cations (e.g., Mg²⁺), inhibiting DNases</td>
+<td><strong>Buffer (Tris-HCl, PBS, HEPES)</strong></td>
+<td>Maintain pH and stabilize proteins</td>
 </tr>
 <tr class="odd">
-<td><strong>SDS (Sodium dodecyl sulfate)</strong></td>
-<td>Disrupts lipid membranes and denatures proteins</td>
+<td><strong>Protease inhibitors (PMSF, leupeptin,
+aprotinin)</strong></td>
+<td>Prevent proteolytic degradation by endogenous proteases</td>
 </tr>
 <tr class="even">
-<td><strong>CTAB (cetyltrimethylammonium bromide)</strong></td>
-<td>Binds polysaccharides and removes complex carbohydrates (plant
-DNA)</td>
+<td><strong>Reducing agents (DTT, β-mercaptoethanol)</strong></td>
+<td>Reduce disulfide bonds; preserve protein monomers</td>
 </tr>
 <tr class="odd">
-<td><strong>Proteinase K</strong></td>
-<td>Degrades proteins, including histones and nucleases</td>
+<td><strong>Salts (NaCl, KCl)</strong></td>
+<td>Stabilize proteins and maintain ionic strength</td>
 </tr>
 <tr class="even">
-<td><strong>Phenol-chloroform</strong></td>
-<td>Separates proteins from nucleic acids via phase separation</td>
+<td><strong>Chelators (EDTA, EGTA)</strong></td>
+<td>Inhibit metalloproteases by chelating divalent cations</td>
 </tr>
 <tr class="odd">
-<td><strong>Isopropanol or Ethanol</strong></td>
-<td>Precipitates DNA from aqueous solution</td>
+<td><strong>Urea, Thiourea (for denaturing protocols)</strong></td>
+<td>Disrupt hydrogen bonds and denature tertiary structure</td>
 </tr>
 <tr class="even">
-<td><strong>NaCl or KCl</strong></td>
-<td>Enhances protein precipitation and stabilizes DNA structure</td>
-</tr>
-<tr class="odd">
-<td><strong>RNase A</strong></td>
-<td>Degrades RNA to purify DNA preparations</td>
+<td><strong>Glycerol</strong></td>
+<td>Stabilizes proteins during storage and freeze-thaw cycles</td>
 </tr>
 </tbody>
 </table>
 <hr />
 </div>
-<div id="optimizing-a-dna-extraction-protocol" class="section level3">
-<h3>3. Optimizing a DNA Extraction Protocol</h3>
-<p>Optimizing DNA extraction requires balancing purity, yield, and
-integrity while minimizing cost and time. Consider the following:</p>
-<div id="a-sample-specific-challenges" class="section level4">
-<h4>a) Sample-Specific Challenges</h4>
-<ul>
-<li><strong>Plants:</strong> High levels of polysaccharides and
-polyphenols can inhibit downstream reactions. Use CTAB and PVP.</li>
-<li><strong>Animal tissues:</strong> Rich in proteins and lipids.
-Proteinase K and SDS are essential.</li>
-<li><strong>Microbes:</strong> Require mechanical lysis (bead beating)
-or lysozyme digestion.</li>
-<li><strong>FFPE samples:</strong> Require deparaffinization and
-prolonged proteinase digestion.</li>
-</ul>
+<div id="steps-in-protein-extraction" class="section level3">
+<h3>Steps in Protein Extraction</h3>
+<ol style="list-style-type: decimal">
+<li><p><strong>Sample Preparation</strong><br />
+Harvest and wash cells/tissue with cold PBS to remove blood or culture
+media. Snap-freeze if necessary.</p></li>
+<li><p><strong>Cell/Tissue Lysis</strong><br />
+Disrupt cells using mechanical (homogenization, sonication) or chemical
+lysis in appropriate buffer with detergents and inhibitors.</p></li>
+<li><p><strong>Solubilization</strong><br />
+Incubate on ice to allow complete protein solubilization. Use gentle
+agitation for non-denaturing protocols.</p></li>
+<li><p><strong>Clarification</strong><br />
+Centrifuge lysate at high speed (10,000–20,000 x g) for 10–30 minutes to
+pellet debris. Collect supernatant.</p></li>
+<li><p><strong>Protein Quantification</strong><br />
+Use assays such as Bradford, BCA, or Lowry to determine protein
+concentration.</p></li>
+<li><p><strong>Storage</strong><br />
+Aliquot proteins and store at –80°C with glycerol if long-term
+preservation is required.</p></li>
+</ol>
+<hr />
 </div>
-<div id="b-dna-quality-metrics" class="section level4">
-<h4>b) DNA Quality Metrics</h4>
+<div id="optimization-strategies" class="section level3">
+<h3>Optimization Strategies</h3>
 <ul>
-<li><strong>A260/A280 ratio (~1.8):</strong> Indicates protein
-contamination.</li>
-<li><strong>A260/A230 ratio (&gt;2.0):</strong> Indicates salt or phenol
-contamination.</li>
-<li><strong>Gel electrophoresis:</strong> Assesses integrity and
-shearing.</li>
-</ul>
-</div>
-<div id="c-inhibitor-removal" class="section level4">
-<h4>c) Inhibitor Removal</h4>
-<ul>
-<li>Use silica column purification or magnetic beads for clean-up.</li>
-<li>Incorporate wash buffers with ethanol and Tris to remove
-carryover.</li>
-</ul>
-</div>
-<div id="d-yield-maximization" class="section level4">
-<h4>d) Yield Maximization</h4>
-<ul>
-<li>Minimize sample loss during transfer steps.</li>
-<li>Avoid over-drying DNA pellets.</li>
-<li>Elute in low-salt buffer (e.g., 10 mM Tris, pH 8.0) or nuclease-free
-water.</li>
+<li><strong>Buffer Composition:</strong> Adjust pH, salt, and detergent
+according to target protein (cytosolic vs. membrane-bound).</li>
+<li><strong>Temperature Control:</strong> Always perform extraction on
+ice or at 4°C to prevent proteolysis.</li>
+<li><strong>Use of Protease and Phosphatase Inhibitors:</strong>
+Essential for preserving post-translational modifications.</li>
+<li><strong>Mechanical vs. Chemical Lysis:</strong> Combine both for
+tough tissues or high yields.</li>
+<li><strong>Avoid Over-Sonication:</strong> Can shear proteins and
+affect functional studies.</li>
 </ul>
 <hr />
 </div>
-</div>
-<div id="a-standard-ctab-based-plant-dna-extraction-protocol-example"
-class="section level3">
-<h3>4. A Standard CTAB-Based Plant DNA Extraction Protocol
-(Example)</h3>
-<p><strong>Materials:</strong> - CTAB buffer (2% CTAB, 100 mM Tris-HCl
-pH 8, 20 mM EDTA, 1.4 M NaCl) - β-mercaptoethanol (freshly added) -
-Chloroform:Isoamyl alcohol (24:1) - Isopropanol - Ethanol (70%)</p>
-<p><strong>Steps:</strong> 1. Grind ~100 mg fresh/frozen leaf in liquid
-nitrogen. 2. Add 700 µL prewarmed CTAB buffer + 1% β-mercaptoethanol. 3.
-Incubate at 65°C for 30 minutes. 4. Add equal volume of
-chloroform:isoamyl alcohol. Mix and centrifuge. 5. Transfer aqueous
-phase. Add 0.7 volume of cold isopropanol. 6. Incubate at -20°C for 1
-hour. Centrifuge and pellet DNA. 7. Wash pellet with 70% ethanol.
-Air-dry. 8. Resuspend in TE buffer or nuclease-free water.</p>
+<div id="protein-quality-assessment" class="section level3">
+<h3>Protein Quality Assessment</h3>
+<ul>
+<li><strong>SDS-PAGE:</strong> Assess integrity and molecular weight
+distribution.</li>
+<li><strong>Western Blotting:</strong> Verify expression and specificity
+of target proteins.</li>
+<li><strong>UV-Vis Spectroscopy (A280):</strong> Estimate concentration
+and assess purity.</li>
+<li><strong>Mass Spectrometry:</strong> Identify post-translational
+modifications and sequence-level information.</li>
+</ul>
 <hr />
 </div>
 <div id="conclusion" class="section level3">
-<h3>5. Conclusion</h3>
-<p>DNA extraction protocols must be tailored to the sample type and
-purpose. Understanding the role of each reagent and the logic of
-extraction steps allows researchers to troubleshoot and optimize for
-high-quality, inhibitor-free DNA. Advances in automation, magnetic bead
-purification, and microfluidics continue to evolve this foundati</p>
+<h3>Conclusion</h3>
+<p>Protein extraction is a nuanced process that must be tailored to the
+sample type and downstream application. A well-optimized protocol
+ensures maximal yield, structural integrity, and functional preservation
+of proteins, forming the cornerstone of reliable proteomic analyses.</p>
 </div>
 
 

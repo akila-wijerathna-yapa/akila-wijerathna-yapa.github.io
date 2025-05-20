@@ -11,7 +11,7 @@
 
 
 
-<title>DNA Extraction Protocols</title>
+<title>Molecular Cloning</title>
 
 <script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -327,167 +327,204 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">DNA Extraction Protocols</h1>
+<h1 class="title toc-ignore">Molecular Cloning</h1>
 
 </div>
 
 
-<p>DNA extraction is a fundamental procedure in molecular biology,
-underpinning a vast array of downstream applications including PCR,
-sequencing, cloning, and genotyping. An effective DNA extraction
-protocol must efficiently lyse cells, protect nucleic acids from
-degradation, and purify DNA away from proteins, polysaccharides, and
-other contaminants.</p>
-<p>This page outlines the logic behind DNA extraction, common reagents
-and their biochemical functions, and principles for optimizing protocols
-across various sample types.</p>
+<p>Molecular cloning is a foundational technique in molecular biology
+that enables the creation of recombinant DNA molecules and their
+propagation in host organisms. It serves as the backbone of genetic
+engineering, synthetic biology, functional genomics, and
+biotechnological innovation. The process allows researchers to isolate,
+manipulate, and express specific DNA sequences in microbial, plant, or
+mammalian systems for both investigative and applied purposes.</p>
 <hr />
-<div id="logic-behind-dna-extraction" class="section level3">
-<h3>1. Logic Behind DNA Extraction</h3>
-<p>A successful DNA extraction protocol typically involves the following
-sequential steps:</p>
+<div id="core-structure-and-workflow" class="section level3">
+<h3>Core Structure and Workflow</h3>
+<p>Modern molecular cloning involves a well-defined series of steps,
+often facilitated by high-fidelity enzymes, advanced vectors, and
+computational design tools. The general workflow includes:</p>
+<div id="insert-preparation" class="section level4">
+<h4>1. <strong>Insert Preparation</strong></h4>
+<ul>
+<li>The gene or DNA fragment of interest is amplified using
+high-fidelity PCR.</li>
+<li>Primers are often designed to include overhangs compatible with the
+cloning strategy (e.g., restriction sites or homologous arms).</li>
+</ul>
+</div>
+<div id="vector-selection-and-preparation" class="section level4">
+<h4>2. <strong>Vector Selection and Preparation</strong></h4>
+<ul>
+<li>Vectors may include plasmids, cosmids, or viral backbones.</li>
+<li>Common vector features include:
+<ul>
+<li><strong>Origin of replication (ori)</strong> for propagation.</li>
+<li><strong>Selectable marker</strong> (e.g., antibiotic
+resistance).</li>
+<li><strong>Multiple cloning site (MCS)</strong> for flexibility in
+insert integration.</li>
+<li><strong>Regulatory elements</strong> such as promoters or tags
+(e.g., His-tag, GFP).</li>
+</ul></li>
+</ul>
+</div>
+<div id="insertion-strategy" class="section level4">
+<h4>3. <strong>Insertion Strategy</strong></h4>
+<ul>
+<li>DNA is ligated into the vector using techniques such as:
+<ul>
+<li>Restriction enzyme digestion and ligation</li>
+<li>Blunt-end ligation</li>
+<li>Homologous recombination</li>
+<li>Site-specific recombination systems (e.g., Gateway)</li>
+<li>Isothermal methods like Gibson Assembly</li>
+</ul></li>
+</ul>
+</div>
+<div id="transformation" class="section level4">
+<h4>4. <strong>Transformation</strong></h4>
+<ul>
+<li>The recombinant DNA is introduced into a suitable host (typically
+<em>E. coli</em>) using:
+<ul>
+<li>Heat shock (chemical transformation)</li>
+<li>Electroporation</li>
+<li>Conjugation or phage-mediated delivery</li>
+</ul></li>
+</ul>
+</div>
+<div id="screening-and-validation" class="section level4">
+<h4>5. <strong>Screening and Validation</strong></h4>
+<ul>
+<li>Colonies are screened using:
+<ul>
+<li>Colony PCR</li>
+<li>Blue/white selection (LacZ complementation)</li>
+<li>Restriction digest</li>
+<li>Sequencing for insert verification</li>
+</ul></li>
+</ul>
+<hr />
+</div>
+</div>
+<div id="case-study-gibson-assembly-isothermal-assembly-reaction"
+class="section level2">
+<h2>Case Study: Gibson Assembly (Isothermal Assembly Reaction)</h2>
+<p>Gibson Assembly is a seamless, restriction enzyme-free method for
+joining multiple DNA fragments in a single-tube isothermal reaction.
+Developed by Daniel Gibson in 2009, this technique is widely used in
+synthetic biology, metabolic engineering, and multi-gene pathway
+construction.</p>
+<hr />
+<div id="principle" class="section level3">
+<h3>Principle</h3>
+<p>Gibson Assembly leverages three enzymatic activities to join DNA
+fragments with overlapping sequences (~20–40 bp):</p>
 <ol style="list-style-type: decimal">
-<li><strong>Cell lysis</strong>: Disrupts cell membranes and releases
-intracellular components.</li>
-<li><strong>DNA stabilization</strong>: Inhibits nucleases that degrade
-DNA.</li>
-<li><strong>Protein and contaminant removal</strong>: Precipitates or
-separates proteins, lipids, and polysaccharides.</li>
-<li><strong>DNA precipitation or binding</strong>: Concentrates and
-isolates DNA.</li>
-<li><strong>DNA wash and elution</strong>: Removes residual contaminants
-and recovers purified DNA.</li>
+<li><strong>5’ Exonuclease</strong>: Chews back 5’ ends to create
+complementary single-stranded overhangs.</li>
+<li><strong>DNA Polymerase</strong>: Fills in the gaps after
+annealing.</li>
+<li><strong>DNA Ligase</strong>: Seals the nicks to produce a covalently
+closed construct.</li>
 </ol>
-<p>These steps can be adapted to suit the biological material (plant,
-animal, microbial, or environmental) and intended downstream
-application.</p>
+<p>The reaction is carried out at 50°C in a single step, allowing
+efficient and scarless assembly of 2 to &gt;10 fragments.</p>
 <hr />
 </div>
-<div id="chemicals-used-and-their-functions" class="section level3">
-<h3>2. Chemicals Used and Their Functions</h3>
+<div id="components-of-a-gibson-assembly-reaction"
+class="section level3">
+<h3>Components of a Gibson Assembly Reaction</h3>
 <table>
 <colgroup>
-<col width="27%" />
-<col width="72%" />
+<col width="30%" />
+<col width="69%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th>Reagent</th>
+<th>Component</th>
 <th>Function</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Tris-HCl</strong></td>
-<td>Buffers pH and maintains a stable environment for DNA integrity</td>
+<td>DNA Fragments</td>
+<td>Each with 20–40 bp overlaps at junctions</td>
 </tr>
 <tr class="even">
-<td><strong>EDTA</strong></td>
-<td>Chelates divalent cations (e.g., Mg²⁺), inhibiting DNases</td>
+<td>T5 Exonuclease</td>
+<td>Creates single-stranded 3’ overhangs</td>
 </tr>
 <tr class="odd">
-<td><strong>SDS (Sodium dodecyl sulfate)</strong></td>
-<td>Disrupts lipid membranes and denatures proteins</td>
+<td>Phusion DNA Polymerase</td>
+<td>Fills in gaps after fragment annealing</td>
 </tr>
 <tr class="even">
-<td><strong>CTAB (cetyltrimethylammonium bromide)</strong></td>
-<td>Binds polysaccharides and removes complex carbohydrates (plant
-DNA)</td>
+<td>Taq DNA Ligase</td>
+<td>Joins adjacent DNA strands</td>
 </tr>
 <tr class="odd">
-<td><strong>Proteinase K</strong></td>
-<td>Degrades proteins, including histones and nucleases</td>
-</tr>
-<tr class="even">
-<td><strong>Phenol-chloroform</strong></td>
-<td>Separates proteins from nucleic acids via phase separation</td>
-</tr>
-<tr class="odd">
-<td><strong>Isopropanol or Ethanol</strong></td>
-<td>Precipitates DNA from aqueous solution</td>
-</tr>
-<tr class="even">
-<td><strong>NaCl or KCl</strong></td>
-<td>Enhances protein precipitation and stabilizes DNA structure</td>
-</tr>
-<tr class="odd">
-<td><strong>RNase A</strong></td>
-<td>Degrades RNA to purify DNA preparations</td>
+<td>Reaction Buffer</td>
+<td>Optimizes enzyme activity and includes PEG, DTT</td>
 </tr>
 </tbody>
 </table>
 <hr />
 </div>
-<div id="optimizing-a-dna-extraction-protocol" class="section level3">
-<h3>3. Optimizing a DNA Extraction Protocol</h3>
-<p>Optimizing DNA extraction requires balancing purity, yield, and
-integrity while minimizing cost and time. Consider the following:</p>
-<div id="a-sample-specific-challenges" class="section level4">
-<h4>a) Sample-Specific Challenges</h4>
-<ul>
-<li><strong>Plants:</strong> High levels of polysaccharides and
-polyphenols can inhibit downstream reactions. Use CTAB and PVP.</li>
-<li><strong>Animal tissues:</strong> Rich in proteins and lipids.
-Proteinase K and SDS are essential.</li>
-<li><strong>Microbes:</strong> Require mechanical lysis (bead beating)
-or lysozyme digestion.</li>
-<li><strong>FFPE samples:</strong> Require deparaffinization and
-prolonged proteinase digestion.</li>
-</ul>
+<div id="experimental-setup" class="section level3">
+<h3>Experimental Setup</h3>
+<ol style="list-style-type: decimal">
+<li><p><strong>Design Overlaps</strong><br />
+Use software (e.g., SnapGene, Benchling) to ensure correct homologous
+arms between adjacent fragments and vector ends.</p></li>
+<li><p><strong>PCR Amplify Fragments</strong><br />
+Use proofreading polymerase to avoid mutations. Purify via gel
+extraction or column cleanup.</p></li>
+<li><p><strong>Reaction Mix</strong><br />
+Combine DNA fragments (usually 0.02–0.5 pmol each) with Gibson Assembly
+Master Mix and incubate at 50°C for 15–60 minutes.</p></li>
+<li><p><strong>Transformation</strong><br />
+Transform into competent <em>E. coli</em>, plate on selective media, and
+incubate overnight.</p></li>
+<li><p><strong>Validation</strong><br />
+Use colony PCR, restriction mapping, and sequencing to confirm correct
+assemblies.</p></li>
+</ol>
+<hr />
 </div>
-<div id="b-dna-quality-metrics" class="section level4">
-<h4>b) DNA Quality Metrics</h4>
+<div id="advantages-of-gibson-assembly" class="section level3">
+<h3>Advantages of Gibson Assembly</h3>
 <ul>
-<li><strong>A260/A280 ratio (~1.8):</strong> Indicates protein
-contamination.</li>
-<li><strong>A260/A230 ratio (&gt;2.0):</strong> Indicates salt or phenol
-contamination.</li>
-<li><strong>Gel electrophoresis:</strong> Assesses integrity and
-shearing.</li>
-</ul>
-</div>
-<div id="c-inhibitor-removal" class="section level4">
-<h4>c) Inhibitor Removal</h4>
-<ul>
-<li>Use silica column purification or magnetic beads for clean-up.</li>
-<li>Incorporate wash buffers with ethanol and Tris to remove
-carryover.</li>
-</ul>
-</div>
-<div id="d-yield-maximization" class="section level4">
-<h4>d) Yield Maximization</h4>
-<ul>
-<li>Minimize sample loss during transfer steps.</li>
-<li>Avoid over-drying DNA pellets.</li>
-<li>Elute in low-salt buffer (e.g., 10 mM Tris, pH 8.0) or nuclease-free
-water.</li>
+<li>Enzyme-free cloning at restriction sites</li>
+<li>Efficient for multi-fragment assembly</li>
+<li>High fidelity and flexibility for synthetic constructs</li>
+<li>Ideal for modular cloning, genome editing, and operon
+engineering</li>
 </ul>
 <hr />
 </div>
-</div>
-<div id="a-standard-ctab-based-plant-dna-extraction-protocol-example"
-class="section level3">
-<h3>4. A Standard CTAB-Based Plant DNA Extraction Protocol
-(Example)</h3>
-<p><strong>Materials:</strong> - CTAB buffer (2% CTAB, 100 mM Tris-HCl
-pH 8, 20 mM EDTA, 1.4 M NaCl) - β-mercaptoethanol (freshly added) -
-Chloroform:Isoamyl alcohol (24:1) - Isopropanol - Ethanol (70%)</p>
-<p><strong>Steps:</strong> 1. Grind ~100 mg fresh/frozen leaf in liquid
-nitrogen. 2. Add 700 µL prewarmed CTAB buffer + 1% β-mercaptoethanol. 3.
-Incubate at 65°C for 30 minutes. 4. Add equal volume of
-chloroform:isoamyl alcohol. Mix and centrifuge. 5. Transfer aqueous
-phase. Add 0.7 volume of cold isopropanol. 6. Incubate at -20°C for 1
-hour. Centrifuge and pellet DNA. 7. Wash pellet with 70% ethanol.
-Air-dry. 8. Resuspend in TE buffer or nuclease-free water.</p>
+<div id="applications-in-life-sciences" class="section level3">
+<h3>Applications in Life Sciences</h3>
+<ul>
+<li>Constructing expression plasmids for recombinant protein
+production</li>
+<li>Engineering metabolic pathways with multiple operons</li>
+<li>Assembling synthetic genomes or large gene clusters</li>
+<li>Generating CRISPR-Cas9 constructs with multiple guide RNAs</li>
+</ul>
 <hr />
 </div>
 <div id="conclusion" class="section level3">
-<h3>5. Conclusion</h3>
-<p>DNA extraction protocols must be tailored to the sample type and
-purpose. Understanding the role of each reagent and the logic of
-extraction steps allows researchers to troubleshoot and optimize for
-high-quality, inhibitor-free DNA. Advances in automation, magnetic bead
-purification, and microfluidics continue to evolve this foundati</p>
+<h3>Conclusion</h3>
+<p>Molecular cloning underpins much of modern life science research. The
+evolution from traditional restriction-ligation systems to seamless
+methods like Gibson Assembly reflects the field’s move toward precision,
+modularity, and scalability. Mastery of these tools empowers researchers
+to design, build, and test biological systems with unprecedented control
+and creativity.</p>
+</div>
 </div>
 
 

@@ -13,7 +13,7 @@
 
 <title>Symposia &amp; Workshops</title>
 
-<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
@@ -57,6 +57,7 @@ if (window.hljs) {
 
 
 
+
 <link rel="stylesheet" href="style.css" type="text/css" />
 
 
@@ -81,6 +82,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -138,11 +142,15 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.tab('show');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -171,8 +179,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -180,16 +188,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -233,7 +234,7 @@ $(document).ready(function () {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -255,7 +256,7 @@ $(document).ready(function () {
   <a href="Symposia-and-Workshops.html">Symposia &amp; Workshops</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Teaching Courses &amp; Workshops
      
     <span class="caret"></span>
@@ -265,24 +266,30 @@ $(document).ready(function () {
       <a href="Bayliss-Data-Bazaar.html">Bayliss Data Bazaar</a>
     </li>
     <li>
-      <a href="Plant Biotechnology.html">Plant Biotechnology</a>
+      <a href="Mass-Spectrometry.html">Mass Spectrometry</a>
     </li>
     <li>
-      <a href="Plant-Tissue-Culture.html">Plant Tissue Culture</a>
+      <a href="Spectroscopy-for-Life-Sceinces.html">Spectroscopy for Life Sceinces</a>
     </li>
     <li>
-      <a href="Plant-Molecular-Biology.html">Plant Molecular Biology</a>
+      <a href="Nuclear-Magnetic-Resonance-(NMR)-Spectroscopy.html">Nuclear Magnetic Resonance (NMR) Spectroscopy</a>
     </li>
     <li>
-      <a href="Plant-Molecular-Physiology.html">Plant Molecular Physiology</a>
+      <a href="Electron-Paramagnetic-Resonance-(EPR)-Spectroscopy.html">Electron Paramagnetic Resonance (EPR) Spectroscopy</a>
     </li>
     <li>
-      <a href="Controlled-Environment-Agriculture.html">Controlled Environment Agriculture (CEA)</a>
+      <a href="Molecular-Cloning.html">Molecular Cloning</a>
+    </li>
+    <li>
+      <a href="Cell-Culture.html">Cell Culture</a>
+    </li>
+    <li>
+      <a href="Spatial-omics.html">Spatial omics</a>
     </li>
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Laboratory Protocols
      
     <span class="caret"></span>
@@ -327,50 +334,125 @@ $(document).ready(function () {
 
 <p><strong>Symposia</strong></p>
 <ul>
-<li>ARC CoE in Plant Energy Biology Annual Forum 2018. “Building Tangible Improvements to Energy Use Efficiency - in Plants”. Novotel Swan Valley Vines Resort – Australia. September 11th -13th 2018.</li>
-<li>ARC CoE in Plant Energy Biology Annual Forum 2017. “Building and Extending Collaborative Projects”. - Adelaide Hills Convention Centre – Australia. May 8th – 11th 2017.</li>
-<li>17th Otto Warburg symposium. “Next Generation Plant Biotechnology”. The Robert H. Smith Faculty of - Agriculture, Food and Environment. The Hebrew University of Jerusalem, Israel. April 11th -13th 2016.</li>
-<li>The 2nd Pears Foundation Alumni Symposium in Plant Sciences, entitled “Knowledge Sharing - A Key for - Enhancing Agricultural Productivity”. The Robert H. Smith Faculty of Agriculture, Food &amp; Environment in - Rehovot, Israel, from September 7th-9th, 2015.</li>
-<li>The 2nd International Symposium on Agriculture and Environmental Health. The Robert H. Smith Faculty of - Agriculture, Food and Environment. The Hebrew University of Jerusalem, Israel. May 28th, 2015</li>
-<li>The 5th The International Conference on Drylands, Deserts, and Desertification (DDD) conference. Ben-Gurion - University of the Negev, Israel. 17th -20th November 2014.</li>
-<li>The 11th Agricultural Research Symposium (AGRES). Wayamba University of Sri Lanka, from 20th -21st of - September 2011.</li>
+<li>ARC CoE in Plant Energy Biology Annual Forum 2018. “Building
+Tangible Improvements to Energy Use Efficiency - in Plants”. Novotel
+Swan Valley Vines Resort – Australia. September 11th -13th 2018.</li>
+<li>ARC CoE in Plant Energy Biology Annual Forum 2017. “Building and
+Extending Collaborative Projects”. - Adelaide Hills Convention Centre –
+Australia. May 8th – 11th 2017.</li>
+<li>17th Otto Warburg symposium. “Next Generation Plant Biotechnology”.
+The Robert H. Smith Faculty of - Agriculture, Food and Environment. The
+Hebrew University of Jerusalem, Israel. April 11th -13th 2016.</li>
+<li>The 2nd Pears Foundation Alumni Symposium in Plant Sciences,
+entitled “Knowledge Sharing - A Key for - Enhancing Agricultural
+Productivity”. The Robert H. Smith Faculty of Agriculture, Food &amp;
+Environment in - Rehovot, Israel, from September 7th-9th, 2015.</li>
+<li>The 2nd International Symposium on Agriculture and Environmental
+Health. The Robert H. Smith Faculty of - Agriculture, Food and
+Environment. The Hebrew University of Jerusalem, Israel. May 28th,
+2015</li>
+<li>The 5th The International Conference on Drylands, Deserts, and
+Desertification (DDD) conference. Ben-Gurion - University of the Negev,
+Israel. 17th -20th November 2014.</li>
+<li>The 11th Agricultural Research Symposium (AGRES). Wayamba University
+of Sri Lanka, from 20th -21st of - September 2011.</li>
 </ul>
 <p><strong>Presentations</strong></p>
 <ul>
-<li><strong>Akila Wijerathna-Yapa.</strong> 06th May 2019. Determining the Contribution of Autophagy to Protein Turnover of - Energy Organelles in Arabidopsis thaliana. European Molecular Biology Organization (EMBO) Practical - Course: Quantitative Proteomics: Strategies and Tools to Probe Biology taking place at EMBL Heidelberg, - Germany.</li>
-<li><strong>Akila Wijerathna-Yapa.</strong> 13th September 2018. Targeted Proteomics for Organelle Abundance Profiling of - Arabidopsis thaliana Autophagy Mutants. ARC CoE in Plant Energy Biology Annual Forum 2018. Novotel Swan - Valley Vines Resort – Australia. September 13th, 2018.</li>
-<li><strong>Akila Wijerathna-Yapa.</strong> 04th April 2018. Autophagy: Bringing together divergent topics in organelle - biology? ARC Centre of Excellence in Plant Energy Biology Seminar, the University of Western Australia.</li>
-<li><strong>Akila Wijerathna-Yapa.</strong> 04th August 2017. Studying the First Derivative of Proteomics: What is protein - turnover tells us and what are the challenges ahead? ARC Centre of Excellence in Plant Energy Biology - Seminar, the University of Western Australia.</li>
-<li><strong>Akila Wijerathna-Yapa.</strong> 26th June 2017. Determining the contribution of autophagy to protein turnover - rate of energy organelles in the model plant Arabidopsis. Ph.D. Proposal Symposium. School of Molecular - Sciences, the University of Western Australia.</li>
-<li><strong>Akila Wijerathna-Yapa.</strong> 06th September 2016. Screening an Arabidopsis cDNA Library for Interactor - Proteins of Cyclase. The 2nd Pears Foundation Alumni Symposium in Plant Sciences: “Knowledge Sharing - A - Key for Enhancing Agricultural Productivity” at the Robert H. Smith Faculty of Agriculture, Food &amp; - Environment in Rehovot, Israel.</li>
-<li><strong>Akila Wijerathna-Yapa.</strong> 20th September 2011. Sri Lankan Fragrant Rice (Oryza Sativa L.) Varieties are - Associated with Decreased Salt Tolerance. The 11th Agricultural Research Symposium (AGRES), Wayamba - University of Sri Lanka.</li>
+<li><strong>Akila Wijerathna-Yapa.</strong> 06th May 2019. Determining
+the Contribution of Autophagy to Protein Turnover of - Energy Organelles
+in Arabidopsis thaliana. European Molecular Biology Organization (EMBO)
+Practical - Course: Quantitative Proteomics: Strategies and Tools to
+Probe Biology taking place at EMBL Heidelberg, - Germany.</li>
+<li><strong>Akila Wijerathna-Yapa.</strong> 13th September 2018.
+Targeted Proteomics for Organelle Abundance Profiling of - Arabidopsis
+thaliana Autophagy Mutants. ARC CoE in Plant Energy Biology Annual Forum
+2018. Novotel Swan - Valley Vines Resort – Australia. September 13th,
+2018.</li>
+<li><strong>Akila Wijerathna-Yapa.</strong> 04th April 2018. Autophagy:
+Bringing together divergent topics in organelle - biology? ARC Centre of
+Excellence in Plant Energy Biology Seminar, the University of Western
+Australia.</li>
+<li><strong>Akila Wijerathna-Yapa.</strong> 04th August 2017. Studying
+the First Derivative of Proteomics: What is protein - turnover tells us
+and what are the challenges ahead? ARC Centre of Excellence in Plant
+Energy Biology - Seminar, the University of Western Australia.</li>
+<li><strong>Akila Wijerathna-Yapa.</strong> 26th June 2017. Determining
+the contribution of autophagy to protein turnover - rate of energy
+organelles in the model plant Arabidopsis. Ph.D. Proposal Symposium.
+School of Molecular - Sciences, the University of Western
+Australia.</li>
+<li><strong>Akila Wijerathna-Yapa.</strong> 06th September 2016.
+Screening an Arabidopsis cDNA Library for Interactor - Proteins of
+Cyclase. The 2nd Pears Foundation Alumni Symposium in Plant Sciences:
+“Knowledge Sharing - A - Key for Enhancing Agricultural Productivity” at
+the Robert H. Smith Faculty of Agriculture, Food &amp; - Environment in
+Rehovot, Israel.</li>
+<li><strong>Akila Wijerathna-Yapa.</strong> 20th September 2011. Sri
+Lankan Fragrant Rice (Oryza Sativa L.) Varieties are - Associated with
+Decreased Salt Tolerance. The 11th Agricultural Research Symposium
+(AGRES), Wayamba - University of Sri Lanka.</li>
 </ul>
 <p><strong>Workshops</strong></p>
 <ul>
-<li>University Learning and Teaching professional development program: SPARK (Skills, Pedagogical Approaches, - Resources, and Knowledge). The University of Western Australia (2019).</li>
-<li>The Research Bazaar (digital literacy emerging at the centre of modern research) at Curtin University, - Australia (2nd – 4th July 2019).</li>
-<li>Quantitative Proteomics: Strategies and Tools to Probe Biology at the European Molecular Biology - Organization (EMBO) EMBL Heidelberg, Germany (5th May – 10th May 2019).<br />
+<li>University Learning and Teaching professional development program:
+SPARK (Skills, Pedagogical Approaches, - Resources, and Knowledge). The
+University of Western Australia (2019).</li>
+<li>The Research Bazaar (digital literacy emerging at the centre of
+modern research) at Curtin University, - Australia (2nd – 4th July
+2019).</li>
+<li>Quantitative Proteomics: Strategies and Tools to Probe Biology at
+the European Molecular Biology - Organization (EMBO) EMBL Heidelberg,
+Germany (5th May – 10th May 2019).<br />
 </li>
-<li>Concept to Creation (C2C). The Centre for Entrepreneurial Research and Innovation (CERI) (21st March – 4th - July 2019).</li>
-<li>Entrepreneurial Mindset Boot Camp. The Centre for Entrepreneurial Research and Innovation (CERI) (22nd-23rd - October 2018).</li>
-<li>Unsealed Radioisotopes Handling Course. Safety, Health &amp; Wellbeing, The University of Western Australia - (24th - 26th July 2018).</li>
-<li>Data Visualization. Centre for Applied Statistics, the University of Western Australia (17th July 2018).</li>
-<li>R Basics. Centre for Applied Statistics, the University of Western Australia. (3rd -4th July 2018)</li>
-<li>ANOVA, Linear regression, and Logistic Regression. Centre for Applied Statistics, the University of Western - Australia (10th -12th July 2018).</li>
-<li>Consumer and Community Involvement in Research workshop at the School of Population and Global Health, the - University of Western Australia (2 July 2018).</li>
-<li>Introductory Statistics. Centre for Applied Statistics, the University of Western Australia (26th -28th - June 2018).</li>
-<li>Graduate Research School Workshop: Academic Writing (Science/Applied Science) at the University of Western - Australia (21 March 2018).</li>
-<li>Laboratory Safety Course. Safety, Health and Wellbeing Safety Training at the University of Western - Australia (6th March 2018)</li>
-<li>The Research Bazaar (software-carpentry) at the University of Western Australia (23rd – 25th January 2018).</li>
-<li>Graduate Research School Workshop: THESIS AS SERIES OF PAPERS (Science/Applied Science) at the University - of Western Australia.</li>
-<li>Laboratory Safety Course. Safety, Health, and Wellbeing Safety Training at the University of Western - Australia (24th July 2017).</li>
-<li>Completed iBiology© iBio1 Certificate: Planning Your Scientific Journey.</li>
-<li>Graduate Research School Workshop: Writing a Journal Article at the University of Western Australia.</li>
-<li>Graduate Research School Workshop: Thesis Structures in The Sciences/ Applied Sciences at the University of - Western Australia.</li>
-<li>Graduate Research School Workshop: Using Microsoft Word for Thesis Writing at the University of Western - Australia.</li>
-<li>Israel-Canada workshop on Advanced Biofuels at The Robert H. Smith Faculty of Agriculture, Food and - Environment, The Hebrew University of Jerusalem, Israel. 8-9th November 2015.</li>
-<li>National Science &amp; Technology Commission workshop on Experimental Design at Postgraduate Institute of - Agriculture, University of Peradeniya. (9th September 2014).</li>
-<li>National Key Facility for Crop Gene Resources and Genetic Improvement. Development of Agricultural Science - in China, Brassica Genome Sequencing. The Institute of Crop Science, CAAS, Beijing 100081, PR China. - (September 2013 –April 2014).</li>
+<li>Concept to Creation (C2C). The Centre for Entrepreneurial Research
+and Innovation (CERI) (21st March – 4th - July 2019).</li>
+<li>Entrepreneurial Mindset Boot Camp. The Centre for Entrepreneurial
+Research and Innovation (CERI) (22nd-23rd - October 2018).</li>
+<li>Unsealed Radioisotopes Handling Course. Safety, Health &amp;
+Wellbeing, The University of Western Australia - (24th - 26th July
+2018).</li>
+<li>Data Visualization. Centre for Applied Statistics, the University of
+Western Australia (17th July 2018).</li>
+<li>R Basics. Centre for Applied Statistics, the University of Western
+Australia. (3rd -4th July 2018)</li>
+<li>ANOVA, Linear regression, and Logistic Regression. Centre for
+Applied Statistics, the University of Western - Australia (10th -12th
+July 2018).</li>
+<li>Consumer and Community Involvement in Research workshop at the
+School of Population and Global Health, the - University of Western
+Australia (2 July 2018).</li>
+<li>Introductory Statistics. Centre for Applied Statistics, the
+University of Western Australia (26th -28th - June 2018).</li>
+<li>Graduate Research School Workshop: Academic Writing (Science/Applied
+Science) at the University of Western - Australia (21 March 2018).</li>
+<li>Laboratory Safety Course. Safety, Health and Wellbeing Safety
+Training at the University of Western - Australia (6th March 2018)</li>
+<li>The Research Bazaar (software-carpentry) at the University of
+Western Australia (23rd – 25th January 2018).</li>
+<li>Graduate Research School Workshop: THESIS AS SERIES OF PAPERS
+(Science/Applied Science) at the University - of Western Australia.</li>
+<li>Laboratory Safety Course. Safety, Health, and Wellbeing Safety
+Training at the University of Western - Australia (24th July 2017).</li>
+<li>Completed iBiology© iBio1 Certificate: Planning Your Scientific
+Journey.</li>
+<li>Graduate Research School Workshop: Writing a Journal Article at the
+University of Western Australia.</li>
+<li>Graduate Research School Workshop: Thesis Structures in The
+Sciences/ Applied Sciences at the University of - Western
+Australia.</li>
+<li>Graduate Research School Workshop: Using Microsoft Word for Thesis
+Writing at the University of Western - Australia.</li>
+<li>Israel-Canada workshop on Advanced Biofuels at The Robert H. Smith
+Faculty of Agriculture, Food and - Environment, The Hebrew University of
+Jerusalem, Israel. 8-9th November 2015.</li>
+<li>National Science &amp; Technology Commission workshop on
+Experimental Design at Postgraduate Institute of - Agriculture,
+University of Peradeniya. (9th September 2014).</li>
+<li>National Key Facility for Crop Gene Resources and Genetic
+Improvement. Development of Agricultural Science - in China, Brassica
+Genome Sequencing. The Institute of Crop Science, CAAS, Beijing 100081,
+PR China. - (September 2013 –April 2014).</li>
 </ul>
 
 
