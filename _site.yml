@@ -43,7 +43,7 @@ navbar:
         - text: Yeast Two-Hybrid
           href: Yeast-Two-Hybrid.html
         - text: Homozygous Transgenic Selection
-          href: Homozygous Transgenic Selection.html
+          href: Homozygous-Transgenic-Selection.html
 
 output:
   html_document:
