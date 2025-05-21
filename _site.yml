@@ -35,7 +35,7 @@ navbar:
         - text: DNA Extraction
           href: DNA-Extraction.html
         - text: RNA Extraction
-          href: RNA Extraction.html
+          href: RNA-Extraction.html
         - text: Protein Extraction
           href: Protein-Extraction.html
         - text: Yeast Transformation
