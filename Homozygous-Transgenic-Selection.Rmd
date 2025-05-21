@@ -1,5 +1,5 @@
 ---
-title: "Homozygous Transgenic Selection Protocols"
+title: "Homozygous Transgenic Selection"
 ---
 
 The selection of homozygous transgenic lines is a critical step in plant molecular biology to ensure stable inheritance and uniform expression of introduced traits. Using *Arabidopsis thaliana* as a model system, this protocol outlines the rationale, reagents, and best practices for isolating homozygous individuals from segregating T1 and T2 populations.
@@ -93,3 +93,9 @@ To obtain homozygous lines, T2 seeds are screened under selective conditions. Li
 ### Conclusion
 
 Selecting homozygous transgenic *Arabidopsis* lines ensures consistency and heritability of transgene expression. A combination of phenotypic selection, segregation analysis, and molecular confirmation enables accurate identification and propagation of stable transgenic lines for downstream functional studies.
+
+---
+
+### References
+
+- Akila Wijerathna Yapa. (2019). *Progeny test for generating single copy homozygous transgenic lines in Arabidopsis thaliana*. protocols.io. https://dx.doi.org/10.17504/protocols.io.5xrg7m6
